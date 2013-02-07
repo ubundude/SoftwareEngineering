@@ -7,6 +7,7 @@
           <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1/grails-app/views" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3/web-app" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/twitter-bootstrap-2.2.2/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -28,6 +29,11 @@
     <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1">
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1/src/groovy" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1/grails-app/controllers" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/grails-app/taglib" isTestSource="false" />
     </content>
     <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/hibernate-2.2.0" />
     <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3">
