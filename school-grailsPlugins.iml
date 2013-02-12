@@ -4,10 +4,10 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
-          <root url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/database-migration-1.2.1/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/fields-1.3/grails-app/views" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/twitter-bootstrap-2.2.2/web-app" relative="/" />
-          <root url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/jquery-1.8.3/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/grails-app/views" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1/grails-app/views" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/twitter-bootstrap-2.2.2/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -20,48 +20,48 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/cache-1.0.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/cache-1.0.1/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/cache-1.0.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/cache-1.0.1/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/cache-1.0.1/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/cache-1.0.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/cache-1.0.1/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/cache-1.0.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/cache-1.0.1/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/cache-1.0.1/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/database-migration-1.2.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/database-migration-1.2.1/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/database-migration-1.2.1/grails-app/controllers" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/database-migration-1.2.1/grails-app/controllers" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/fields-1.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/fields-1.3/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/fields-1.3/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/fields-1.3/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/fields-1.3/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/hibernate-2.2.0" />
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/jquery-1.8.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/jquery-1.8.3/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/jquery-1.8.3/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/jquery-1.8.3/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/jquery-1.8.3/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/hibernate-2.2.0" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/jquery-1.8.3/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/resources-1.1.6">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/resources-1.1.6/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/resources-1.1.6">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/resources-1.1.6/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/resources-1.1.6/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/spring-security-core-1.2.7.3">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/spring-security-core-1.2.7.3/src/java" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/spring-security-core-1.2.7.3/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/spring-security-core-1.2.7.3/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/spring-security-core-1.2.7.3/grails-app/services" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/spring-security-core-1.2.7.3/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/spring-security-core-1.2.7.3">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/spring-security-core-1.2.7.3/src/java" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/spring-security-core-1.2.7.3/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/spring-security-core-1.2.7.3/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/spring-security-core-1.2.7.3/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/spring-security-core-1.2.7.3/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/tomcat-2.2.0" />
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/twitter-bootstrap-2.2.2">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/twitter-bootstrap-2.2.2/grails-app/i18n" isTestSource="false" />
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/twitter-bootstrap-2.2.2/grails-app/taglib" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/tomcat-2.2.0" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/twitter-bootstrap-2.2.2">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/twitter-bootstrap-2.2.2/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/twitter-bootstrap-2.2.2/grails-app/taglib" isTestSource="false" />
     </content>
-    <content url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/webxml-1.4.1">
-      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/School/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
+    <content url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/webxml-1.4.1">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.0/projects/school/plugins/webxml-1.4.1/src/groovy" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

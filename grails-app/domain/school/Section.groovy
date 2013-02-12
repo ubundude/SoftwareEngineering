@@ -1,9 +1,11 @@
 package school
 
 class Section {
-    String sectionNumber
+    Integer sectionNumber
 
-    static belongsTo = [course: Course]
+    static belongsTo = [course: Course, teacher: User]
+
+    static hasMany = [students: User]
 
     static constraints = {
     }
