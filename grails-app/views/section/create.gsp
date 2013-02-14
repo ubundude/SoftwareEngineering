@@ -54,7 +54,7 @@
         <fieldset>
             <g:form class="form-horizontal" action="create">
                 <fieldset>
-                    <f:all bean="sectionInstance"/>
+                    <g:render template="form"/>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">
                             <i class="icon-ok icon-white"></i>

@@ -55,7 +55,7 @@
             <g:form class="form-horizontal" action="edit" id="${sectionInstance?.id}">
                 <g:hiddenField name="version" value="${sectionInstance?.version}"/>
                 <fieldset>
-                    <f:all bean="sectionInstance"/>
+                    <g:render template="form"/>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">
                             <i class="icon-ok icon-white"></i>

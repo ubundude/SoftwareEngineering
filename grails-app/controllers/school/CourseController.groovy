@@ -3,7 +3,7 @@ package school
 import org.springframework.dao.DataIntegrityViolationException
 import grails.plugins.springsecurity.Secured
 
-@Secured('ROLE_ADMIN')
+@Secured("ROLE_ADMIN")
 class CourseController {
 
     static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']
@@ -53,7 +53,6 @@ class CourseController {
                 if (!courseInstance) {
                     flash.message = message(code: 'default.not.found.message', args: [message(code: 'course.label', default: 'Course'), params.id])
                     redirect action: 'list'
-                    return
                 }
 
                 [courseInstance: courseInstance]
