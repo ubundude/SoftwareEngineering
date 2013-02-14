@@ -5,6 +5,9 @@ import grails.plugins.springsecurity.Secured
 @Secured('ROLE_ADMIN')
 class Section {
     Integer sectionNumber
+    String schedule
+    String building
+    String room
 
     static belongsTo = [course: Course, teacher: User]
 
