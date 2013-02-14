@@ -61,7 +61,11 @@
 <div class="fieldcontain">
     <label>Roles</label>
     <g:each in="${school.Role.list()}" var="role">
-        <g:checkBox name="authorities" value="${role.id}" />
+        <label class="checkbox">
+        <input type="checkbox" name="authorities" id="check${role.id}" value="${role.id}"
+            <g:if test="${userInstance?.authorities.contains(role)}">checked="checked" </g:if>
+        />
+        </label>
     </g:each>
 
 </div>
