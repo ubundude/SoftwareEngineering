@@ -9,7 +9,7 @@ class Section {
     String building
     String room
 
-    static belongsTo = [course: Course, teacher: User]
+    static belongsTo = [course: Course, teacher: User, assistant: User]
 
     static hasMany = [students: User]
 

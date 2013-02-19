@@ -82,8 +82,9 @@ class UserController {
                 }
 
                 UserRole.removeAll(userInstance)
-                for(role in userInstance.authorities) {
-                     UserRole.create(userInstance, role)
+                for(roleId in params.authorities) {
+                    Role role = Role.get(roleId)
+                    UserRole.create(userInstance, role)
                 }
 
 

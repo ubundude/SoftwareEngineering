@@ -16,27 +16,27 @@ class SectionController {
     }
 
     def create() {
-        switch (request.method) {
-            case 'GET':
-                [sectionInstance: new Section(params)]
-                break
-            case 'POST':
-                def sectionInstance = new Section(params)
-                if (!sectionInstance.save(flush: true)) {
-                    render view: 'create', model: [sectionInstance: sectionInstance]
-                    return
-                }
+		switch (request.method) {
+		case 'GET':
+        	[sectionInstance: new Section(params)]
+			break
+		case 'POST':
+	        def sectionInstance = new Section(params)
+	        if (!sectionInstance.save(flush: true)) {
+	            render view: 'create', model: [sectionInstance: sectionInstance]
+	            return
+	        }
 
-                flash.message = message(code: 'default.created.message', args: [message(code: 'section.label', default: 'Section'), sectionInstance.id])
-                redirect action: 'show', id: sectionInstance.id
-                break
-        }
+			flash.message = message(code: 'default.created.message', args: [message(code: 'section.label', default: 'Section'), sectionInstance.id])
+	        redirect action: 'show', id: sectionInstance.id
+			break
+		}
     }
 
     def show() {
         def sectionInstance = Section.get(params.id)
         if (!sectionInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
             redirect action: 'list'
             return
         }
@@ -45,64 +45,64 @@ class SectionController {
     }
 
     def edit() {
-        switch (request.method) {
-            case 'GET':
-                def sectionInstance = Section.get(params.id)
-                if (!sectionInstance) {
-                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
-                    redirect action: 'list'
-                    return
-                }
+		switch (request.method) {
+		case 'GET':
+	        def sectionInstance = Section.get(params.id)
+	        if (!sectionInstance) {
+	            flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
+	            redirect action: 'list'
+	            return
+	        }
 
-                [sectionInstance: sectionInstance]
-                break
-            case 'POST':
-                def sectionInstance = Section.get(params.id)
-                if (!sectionInstance) {
-                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
-                    redirect action: 'list'
-                    return
-                }
+	        [sectionInstance: sectionInstance]
+			break
+		case 'POST':
+	        def sectionInstance = Section.get(params.id)
+	        if (!sectionInstance) {
+	            flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
+	            redirect action: 'list'
+	            return
+	        }
 
-                if (params.version) {
-                    def version = params.version.toLong()
-                    if (sectionInstance.version > version) {
-                        sectionInstance.errors.rejectValue('version', 'default.optimistic.locking.failure',
-                                [message(code: 'section.label', default: 'Section')] as Object[],
-                                "Another user has updated this Section while you were editing")
-                        render view: 'edit', model: [sectionInstance: sectionInstance]
-                        return
-                    }
-                }
+	        if (params.version) {
+	            def version = params.version.toLong()
+	            if (sectionInstance.version > version) {
+	                sectionInstance.errors.rejectValue('version', 'default.optimistic.locking.failure',
+	                          [message(code: 'section.label', default: 'Section')] as Object[],
+	                          "Another user has updated this Section while you were editing")
+	                render view: 'edit', model: [sectionInstance: sectionInstance]
+	                return
+	            }
+	        }
 
-                sectionInstance.properties = params
+	        sectionInstance.properties = params
 
-                if (!sectionInstance.save(flush: true)) {
-                    render view: 'edit', model: [sectionInstance: sectionInstance]
-                    return
-                }
+	        if (!sectionInstance.save(flush: true)) {
+	            render view: 'edit', model: [sectionInstance: sectionInstance]
+	            return
+	        }
 
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'section.label', default: 'Section'), sectionInstance.id])
-                redirect action: 'show', id: sectionInstance.id
-                break
-        }
+			flash.message = message(code: 'default.updated.message', args: [message(code: 'section.label', default: 'Section'), sectionInstance.id])
+	        redirect action: 'show', id: sectionInstance.id
+			break
+		}
     }
 
     def delete() {
         def sectionInstance = Section.get(params.id)
         if (!sectionInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
+			flash.message = message(code: 'default.not.found.message', args: [message(code: 'section.label', default: 'Section'), params.id])
             redirect action: 'list'
             return
         }
 
         try {
             sectionInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'section.label', default: 'Section'), params.id])
+			flash.message = message(code: 'default.deleted.message', args: [message(code: 'section.label', default: 'Section'), params.id])
             redirect action: 'list'
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'section.label', default: 'Section'), params.id])
+			flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'section.label', default: 'Section'), params.id])
             redirect action: 'show', id: params.id
         }
     }

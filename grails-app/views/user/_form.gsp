@@ -63,8 +63,9 @@
     <g:each in="${school.Role.list()}" var="role">
         <label class="checkbox">
         <input type="checkbox" name="authorities" id="check${role.id}" value="${role.id}"
-            <g:if test="${userInstance?.authorities.contains(role)}">checked="checked" </g:if>
+            <g:if test="${userInstance?.id != null && userInstance.authorities.contains(role)}">checked="checked" </g:if>
         />
+        ${role.authority}
         </label>
     </g:each>
 
