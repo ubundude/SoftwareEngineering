@@ -1,4 +1,6 @@
-import school.*
+import school.Role
+import school.User
+import school.UserRole
 
 class BootStrap {
 
