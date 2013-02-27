@@ -24,6 +24,12 @@
             you get the bear, and some days the bear gets you. Our neural pathways have become accustomed to
             your sensory input patterns.</p>
         </div>
+
+        <div class="span4">
+            <h3>Classes</h3>
+
+
+        </div>
     </section>
 
 </div>
