@@ -15,7 +15,15 @@
 
 <body>
 <div class="row-fluid">
-    <section id="main">
+    <aside id="application-status" class="span3">
+        <div class="well sidebar-nav">
+            <h5>User</h5>
+                <sec:loggedInUserInfo field="username" />
+
+
+        </div>
+    </aside>
+    <section id="main" class="span9">
         <div class="hero-unit">
             <h1>Welcome to eLearn+</h1>
 

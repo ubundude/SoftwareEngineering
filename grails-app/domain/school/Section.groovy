@@ -14,5 +14,6 @@ class Section {
     static hasMany = [students: User]
 
     static constraints = {
+        assistant nullable: true
     }
 }

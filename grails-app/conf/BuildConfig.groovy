@@ -65,7 +65,6 @@ grails.project.dependency.resolution = {
         compile ":webxml:1.4.1"
         compile ":twitter-bootstrap:2.2.2"
         compile ":fields:1.3"
-        compile ":scala:0.6.4"
 
 
     }
