@@ -48,7 +48,7 @@
         <g:message code="section.students.label" default="Students"/>
 
     </label>
-    <g:select name="students" from="${school.User.list()}" multiple="multiple" optionKey="id" size="5"
+    <g:select name="students" from="${students}" multiple="multiple" optionKey="id" size="5"
               value="${sectionInstance?.students*.id}" class="many-to-many"/>
 </div>
 
@@ -57,7 +57,7 @@
         <g:message code="section.teacher.label" default="Teacher"/>
         <span class="required-indicator">*</span>
     </label>
-    <g:select id="teacher" name="teacher.id" from="${school.User.list()}" optionKey="id" required=""
+    <g:select id="teacher" name="teacher.id" from="${teachers}" optionKey="id" required=""
               value="${sectionInstance?.teacher?.id}" class="many-to-one"/>
 </div>
 

@@ -18,7 +18,9 @@ class SectionController {
     def create() {
         switch (request.method) {
             case 'GET':
-                [sectionInstance: new Section(params)]
+                List teachers = User.executeQuery("select u from User u, UserRole ur where ur.user.id = u.id and ur.role.authority = 'ROLE_TEACHER'")
+                List students = User.executeQuery("select u from User u, UserRole ur where ur.user.id = u.id and ur.role.authority = 'ROLE_STUDENT'")
+                [sectionInstance: new Section(params), teachers: teachers, students: students]
                 break
             case 'POST':
                 def sectionInstance = new Section(params)
