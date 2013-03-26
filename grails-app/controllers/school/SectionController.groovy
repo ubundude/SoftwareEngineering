@@ -1,7 +1,9 @@
 package school
 
+import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
+@Secured("ROLE_ADMIN")
 class SectionController {
 
     static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']

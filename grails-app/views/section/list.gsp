@@ -1,3 +1,4 @@
+
 <%@ page import="school.Section" %>
 <!doctype html>
 <html>
@@ -43,41 +44,44 @@
         <table class="table table-striped">
             <thead>
             <tr>
-
+                
+                <th class="header"><g:message code="section.assistant.label"
+                                              default="Assistant"/></th>
+                
                 <g:sortableColumn property="building"
                                   title="${message(code: 'section.building.label', default: 'Building')}"/>
-
-                <th class="header"><g:message code="section.course.label" default="Course"/></th>
-
-                <g:sortableColumn property="room" title="${message(code: 'section.room.label', default: 'Room')}"/>
-
+                
+                <th class="header"><g:message code="section.course.label"
+                                              default="Course"/></th>
+                
+                <g:sortableColumn property="room"
+                                  title="${message(code: 'section.room.label', default: 'Room')}"/>
+                
                 <g:sortableColumn property="schedule"
                                   title="${message(code: 'section.schedule.label', default: 'Schedule')}"/>
-
+                
                 <g:sortableColumn property="sectionNumber"
                                   title="${message(code: 'section.sectionNumber.label', default: 'Section Number')}"/>
-
-                <th class="header"><g:message code="section.teacher.label" default="Teacher"/></th>
-
+                
                 <th></th>
             </tr>
             </thead>
             <tbody>
             <g:each in="${sectionInstanceList}" var="sectionInstance">
                 <tr>
-
+                    
+                    <td>${fieldValue(bean: sectionInstance, field: "assistant")}</td>
+                    
                     <td>${fieldValue(bean: sectionInstance, field: "building")}</td>
-
+                    
                     <td>${fieldValue(bean: sectionInstance, field: "course")}</td>
-
+                    
                     <td>${fieldValue(bean: sectionInstance, field: "room")}</td>
-
+                    
                     <td>${fieldValue(bean: sectionInstance, field: "schedule")}</td>
-
+                    
                     <td>${fieldValue(bean: sectionInstance, field: "sectionNumber")}</td>
-
-                    <td>${fieldValue(bean: sectionInstance, field: "teacher")}</td>
-
+                    
                     <td class="link">
                         <g:link action="show" id="${sectionInstance.id}" class="btn btn-small">Show &raquo;</g:link>
                     </td>
