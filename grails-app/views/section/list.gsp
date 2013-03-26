@@ -44,15 +44,15 @@
         <table class="table table-striped">
             <thead>
             <tr>
+
+                <th class="header"><g:message code="section.course.label"
+                                              default="Course"/></th>
                 
                 <th class="header"><g:message code="section.assistant.label"
                                               default="Assistant"/></th>
                 
                 <g:sortableColumn property="building"
                                   title="${message(code: 'section.building.label', default: 'Building')}"/>
-                
-                <th class="header"><g:message code="section.course.label"
-                                              default="Course"/></th>
                 
                 <g:sortableColumn property="room"
                                   title="${message(code: 'section.room.label', default: 'Room')}"/>
@@ -69,12 +69,12 @@
             <tbody>
             <g:each in="${sectionInstanceList}" var="sectionInstance">
                 <tr>
+
+                    <td>${fieldValue(bean: sectionInstance, field: "course")}</td>
                     
                     <td>${fieldValue(bean: sectionInstance, field: "assistant")}</td>
                     
                     <td>${fieldValue(bean: sectionInstance, field: "building")}</td>
-                    
-                    <td>${fieldValue(bean: sectionInstance, field: "course")}</td>
                     
                     <td>${fieldValue(bean: sectionInstance, field: "room")}</td>
                     
