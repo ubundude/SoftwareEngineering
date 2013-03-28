@@ -12,6 +12,9 @@
 /*.tmproj
 /ivy*
 /eclipse
+/.ide
+/*.iml
+
 
 # default HSQL database files for production mode
 /prodDb.*
@@ -21,7 +24,7 @@
 *Db.script
 
 # logs
-/stacktrace.log
+/*.log
 /test/reports
 /logs
 
