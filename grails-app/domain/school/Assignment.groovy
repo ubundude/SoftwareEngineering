@@ -10,4 +10,8 @@ class Assignment {
 
     static constraints = {
     }
+
+    String toString() {
+        return Section
+    }
 }
