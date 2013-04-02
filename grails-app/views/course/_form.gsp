@@ -1,7 +1,5 @@
 <%@ page import="school.Course" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'code', 'error')} ">
     <label for="code">
         <g:message code="course.code.label" default="Code"/>
@@ -33,22 +31,6 @@
     </label>
     <g:textField name="name" value="${courseInstance?.name}"/>
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'section', 'error')} ">
-    <label for="section">
-        <g:message code="course.section.label" default="Section"/>
-
-    </label>
-
-    <ul class="one-to-many">
-        <g:each in="${courseInstance?.section ?}" var="s">
-            <li><g:link controller="section" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></li>
-        </g:each>
-        <li class="add">
-            <g:link controller="section" action="create"
-                    params="['course.id': courseInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'section.label', default: 'Section')])}</g:link>
-        </li>
-    </ul>
 
 </div>
 

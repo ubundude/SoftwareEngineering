@@ -12,6 +12,6 @@ class Assignment {
     }
 
     String toString() {
-        return Section
+        return section
     }
 }

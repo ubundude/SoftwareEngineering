@@ -18,7 +18,8 @@ class GradesController {
     def create() {
         switch (request.method) {
             case 'GET':
-                [gradesInstance: new Grades(params)]
+                List students = User.executeQuery("select u from User u, UserRole ur where ur.user.id = u.id and ur.role.authority = 'ROLE_STUDENT'")
+                [gradesInstance: new Grades(params), students: students]
                 break
             case 'POST':
                 def gradesInstance = new Grades(params)

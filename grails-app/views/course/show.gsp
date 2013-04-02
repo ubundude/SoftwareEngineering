@@ -70,15 +70,6 @@
 
             </g:if>
 
-            <g:if test="${courseInstance?.section}">
-                <dt><g:message code="course.section.label" default="Section"/></dt>
-
-                <g:each in="${courseInstance.section}" var="s">
-                    <dd><g:link controller="section" action="show" id="${s.id}">${s?.encodeAsHTML()}</g:link></dd>
-                </g:each>
-
-            </g:if>
-
         </dl>
 
         <g:form>

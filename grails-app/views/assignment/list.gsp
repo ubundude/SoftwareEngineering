@@ -60,10 +60,10 @@
             <tbody>
             <g:each in="${assignmentInstanceList}" var="assignmentInstance">
                 <tr>
-                    
-                    <td><g:formatDate date="${assignmentInstance.dateDue}"/></td>
-                    
+
                     <td>${fieldValue(bean: assignmentInstance, field: "name")}</td>
+
+                    <td><g:formatDate date="${assignmentInstance.dateDue}"/></td>
                     
                     <td>${fieldValue(bean: assignmentInstance, field: "section")}</td>
                     

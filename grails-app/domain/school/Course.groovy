@@ -6,8 +6,6 @@ class Course {
     Integer credits
     String description
 
-    static hasMany = [section: Section]
-
     static constraints = {
     }
 
