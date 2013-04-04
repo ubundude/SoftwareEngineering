@@ -42,15 +42,7 @@
         </g:if>
 
         <dl>
-            
-            <g:if test="${sectionInstance?.assistant}">
-                <dt><g:message code="section.assistant.label" default="Assistant"/></dt>
-                
-                <dd><g:link controller="user" action="show"
-                            id="${sectionInstance?.assistant?.id}">${sectionInstance?.assistant?.encodeAsHTML()}</g:link></dd>
-                
-            </g:if>
-            
+
             <g:if test="${sectionInstance?.building}">
                 <dt><g:message code="section.building.label" default="Building"/></dt>
                 
@@ -64,6 +56,29 @@
                 <dd><g:link controller="course" action="show"
                             id="${sectionInstance?.course?.id}">${sectionInstance?.course?.encodeAsHTML()}</g:link></dd>
                 
+            </g:if>
+
+            <g:if test="${sectionInstance?.sectionNumber}">
+                <dt><g:message code="section.sectionNumber.label" default="Section Number"/></dt>
+
+                <dd><g:fieldValue bean="${sectionInstance}" field="sectionNumber"/></dd>
+
+            </g:if>
+
+            <g:if test="${sectionInstance?.teacher}">
+                <dt><g:message code="section.teacher.label" default="Teacher"/></dt>
+
+                <dd><g:link controller="user" action="show"
+                            id="${sectionInstance?.teacher?.id}">${sectionInstance?.teacher?.encodeAsHTML()}</g:link></dd>
+
+            </g:if>
+
+            <g:if test="${sectionInstance?.assistant}">
+                <dt><g:message code="section.assistant.label" default="Assistant"/></dt>
+
+                <dd><g:link controller="user" action="show"
+                            id="${sectionInstance?.assistant?.id}">${sectionInstance?.assistant?.encodeAsHTML()}</g:link></dd>
+
             </g:if>
             
             <g:if test="${sectionInstance?.room}">
@@ -80,13 +95,6 @@
                 
             </g:if>
             
-            <g:if test="${sectionInstance?.sectionNumber}">
-                <dt><g:message code="section.sectionNumber.label" default="Section Number"/></dt>
-                
-                <dd><g:fieldValue bean="${sectionInstance}" field="sectionNumber"/></dd>
-                
-            </g:if>
-            
             <g:if test="${sectionInstance?.students}">
                 <dt><g:message code="section.students.label" default="Students"/></dt>
                 
@@ -96,15 +104,7 @@
                 </g:each>
                 
             </g:if>
-            
-            <g:if test="${sectionInstance?.teacher}">
-                <dt><g:message code="section.teacher.label" default="Teacher"/></dt>
-                
-                <dd><g:link controller="user" action="show"
-                            id="${sectionInstance?.teacher?.id}">${sectionInstance?.teacher?.encodeAsHTML()}</g:link></dd>
-                
-            </g:if>
-            
+
         </dl>
 
         <g:form>

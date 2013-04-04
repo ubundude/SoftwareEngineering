@@ -16,6 +16,14 @@
     <g:field name="sectionNumber" type="number" value="${sectionInstance.sectionNumber}" required=""/>
 </div>
 
+<div class="fieldcontain ${hassErrors(bean: sectionInstance, field: 'term', 'error')}">
+    <label for="term">
+        <g:message code="section.term.label" default="Term"/>
+
+    </label>
+    <g:select id="term" name="term.id" from="${sessionInstance.term}" optionKey="id" required="" value="${sectionInstance?.term?.id}" class="many-to-one"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'teacher', 'error')} required">
     <label for="teacher">
         <g:message code="section.teacher.label" default="Teacher" />

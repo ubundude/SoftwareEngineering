@@ -13,6 +13,11 @@
     <title>Homepage</title>
 </head>
 <body>
+    <div class="row-fluid">
+        <div class="span6">
+            <g:select name="" from=""
+        </div>
+    </div>
 
 </body>
 </html>

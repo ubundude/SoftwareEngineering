@@ -47,7 +47,13 @@
 
                 <th class="header"><g:message code="section.course.label"
                                               default="Course"/></th>
-                
+
+                <g:sortableColumn property="sectionNumber"
+                                  title="${message(code: 'section.sectionNumber.label', default: 'Section Number')}"/>
+
+                <g:sortableColumn property="teacher"
+                                  title="${message(code: 'section.teacher.label', default: 'Teacher')}"/>
+
                 <th class="header"><g:message code="section.assistant.label"
                                               default="Assistant"/></th>
                 
@@ -60,8 +66,7 @@
                 <g:sortableColumn property="schedule"
                                   title="${message(code: 'section.schedule.label', default: 'Schedule')}"/>
                 
-                <g:sortableColumn property="sectionNumber"
-                                  title="${message(code: 'section.sectionNumber.label', default: 'Section Number')}"/>
+
                 
                 <th></th>
             </tr>
@@ -71,7 +76,11 @@
                 <tr>
 
                     <td>${fieldValue(bean: sectionInstance, field: "course")}</td>
-                    
+
+                    <td>${fieldValue(bean: sectionInstance, field: "sectionNumber")}</td>
+
+                    <td>${fieldValue(bean: sectionInstance, field: "teacher")}</td>
+
                     <td>${fieldValue(bean: sectionInstance, field: "assistant")}</td>
                     
                     <td>${fieldValue(bean: sectionInstance, field: "building")}</td>
@@ -79,8 +88,6 @@
                     <td>${fieldValue(bean: sectionInstance, field: "room")}</td>
                     
                     <td>${fieldValue(bean: sectionInstance, field: "schedule")}</td>
-                    
-                    <td>${fieldValue(bean: sectionInstance, field: "sectionNumber")}</td>
                     
                     <td class="link">
                         <g:link action="show" id="${sectionInstance.id}" class="btn btn-small">Show &raquo;</g:link>
