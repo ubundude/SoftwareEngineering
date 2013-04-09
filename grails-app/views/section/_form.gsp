@@ -1,11 +1,11 @@
-<%@ page import="school.Section" %>
+<%@ page import="school.Course; school.Section" %>
 
 <div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'course', 'error')} required">
     <label for="course">
-        <g:message code="section.course.label" default="Course" />
+        <g:message code="course.label" default="Course" />
         <span class="required-indicator">*</span>
     </label>
-    <g:select id="course" name="course.id" from="${school.Course.list()}" optionKey="id" required="" value="${sectionInstance?.course?.id}" class="many-to-one"/>
+    <g:select id="course" name="course.id" from="${Course.list()}" optionKey="id" required="" value="${sectionInstance?.course?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'sectionNumber', 'error')} required">
@@ -18,7 +18,7 @@
 
 <div class="fieldcontain ${hassErrors(bean: sectionInstance, field: 'term', 'error')}">
     <label for="term">
-        <g:message code="section.term.label" default="Term"/>
+        <g:message code="term.label" default="Term"/>
 
     </label>
     <g:select id="term" name="term.id" from="${sessionInstance.term}" optionKey="id" required="" value="${sectionInstance?.term?.id}" class="many-to-one"/>
@@ -26,7 +26,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'teacher', 'error')} required">
     <label for="teacher">
-        <g:message code="section.teacher.label" default="Teacher" />
+        <g:message code="teacher.label" default="Teacher" />
         <span class="required-indicator">*</span>
     </label>
     <g:select id="teacher" name="teacher.id" from="${teachers}" optionKey="id" required="" value="${sectionInstance?.teacher?.id}" class="many-to-one"/>
@@ -34,7 +34,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'assistant', 'error')} ">
 	<label for="assistant">
-		<g:message code="section.assistant.label" default="Assistant" />
+		<g:message code="assistant.label" default="Assistant" />
 		
 	</label>
 	<g:select id="assistant" name="assistant.id" from="${ta}" optionKey="id" value="${sectionInstance?.assistant?.id}" class="many-to-one" noSelection="['null': '']"/>
@@ -68,7 +68,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'students', 'error')} ">
 	<label for="students">
-		<g:message code="section.students.label" default="Students" />
+		<g:message code="students.label" default="Students" />
 		
 	</label>
 	<g:select name="students" from="${students}" multiple="multiple" optionKey="id" size="5" value="${sectionInstance?.students*.id}" class="many-to-many"/>

@@ -39,16 +39,37 @@
                 <span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="${createLink(uri: '/')}">Grails Twitter Bootstrap</a>
+            <a class="brand" href="${createLink(uri: '/')}">eLearn+</a>
 
             <div class="nav-collapse">
                 <ul class="nav">
-                    <li<%=request.forwardURI == "${createLink(uri: '/')}" ? ' class="active"' : ''%>><a
+                    <sec:ifAllGranted roles="ROLE_ADMIN">
+                        <li <g:if test="${request.getRequestURI().startsWith("/user")}">class="active"</g:if>><a href="${createLink(controller:'user')}">Users</a></li>
+                        <li <g:if test="${request.getRequestURI().startsWith("/course")}">class="active"</g:if>><a href="${createLink(controller:'course')}">Course Manager</a></li>
+                    </sec:ifAllGranted>
+                    <sec:ifAnyGranted roles="ROLE_TEACHER, ROLE_ADMIN">
+                        <li <g:if test="${request.getRequestURI().startsWith("/section")}">class="active"</g:if>><a href="${createLink(controller:'section')}">Section Manager</a></li>
+                    </sec:ifAnyGranted>
+                    <sec:ifAnyGranted roles="ROLE_TEACHER, ROLE_TA">
+                        <li <g:if test="${request.getRequestURI().startsWith("/assignment")}">class="active"</g:if>><a href="${createLink(controller:'assignment')}">Assignment Manager</a></li>
+                        <li <g:if test="${request.getRequestURI().startsWith("/grades")}">class="active"</g:if>><a href="${createLink(controller:'grades')}">Grade Manager</a></li>
+                    </sec:ifAnyGranted>
+
+                    <sec:ifNotLoggedIn>
+                       <li><g:link controller="login" action="auth">Login</g:link></li>
+                    </sec:ifNotLoggedIn>
+                    <sec:ifLoggedIn>
+                        <li><g:link controller="logout">Logout</g:link></li>
+                    </sec:ifLoggedIn>
+
+
+
+                <!--    <li<%=request.forwardURI == "${createLink(uri: '/')}" ? ' class="active"' : ''%>><a
                             href="${createLink(uri: '/')}">Home</a></li>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">
                         <li<%=c.logicalPropertyName == controllerName ? ' class="active"' : ''%>><g:link
                                 controller="${c.logicalPropertyName}">${c.naturalName}</g:link></li>
-                    </g:each>
+                    </g:each>   -->
                 </ul>
             </div>
         </div>
@@ -61,7 +82,7 @@
     <hr>
 
     <footer>
-        <p>&copy; Company 2011</p>
+        <p>&copy; SWAU 2013</p>
     </footer>
 </div>
 

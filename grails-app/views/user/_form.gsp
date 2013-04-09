@@ -1,10 +1,10 @@
-<%@ page import="school.User" %>
+<%@ page import="school.Role; school.User" %>
 
 
 
 <div class="fieldcontain ${hasErrors(bean: userInstance, field: 'name', 'error')} required">
     <label for="name">
-        <g:message code="user.name.label" default="Name"/>
+        <g:message code="name.label" default="Name"/>
         <span class="required-indicator">*</span>
     </label>
     <g:textField name="name" required="" value="${userInstance?.name}"/>
@@ -60,7 +60,7 @@
 
 <div class="fieldcontain">
     <label>Roles</label>
-    <g:each in="${school.Role.list()}" var="role">
+    <g:each in="${Role.list()}" var="role">
         <label class="checkbox">
             <input type="checkbox" name="authorities" id="check${role.id}" value="${role.id}"
                    <g:if test="${userInstance?.id != null && userInstance.authorities.contains(role)}">checked="checked"</g:if>/>

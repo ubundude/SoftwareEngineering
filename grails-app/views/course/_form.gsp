@@ -26,11 +26,10 @@
 
 <div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'name', 'error')} ">
     <label for="name">
-        <g:message code="course.name.label" default="Name"/>
+        <g:message code="name.label" default="Name"/>
 
     </label>
     <g:textField name="name" value="${courseInstance?.name}"/>
 </div>
 
-</div>
 

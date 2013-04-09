@@ -1,19 +1,19 @@
-<%@ page import="school.Grades" %>
+<%@ page import="school.Assignment; school.Grades" %>
 
 
 
 <div class="fieldcontain ${hasErrors(bean: gradesInstance, field: 'assignment', 'error')} required">
     <label for="assignment">
-        <g:message code="grades.assignment.label" default="Assignment"/>
+        <g:message code="assignment.label" default="Assignment"/>
         <span class="required-indicator">*</span>
     </label>
-    <g:select id="assignment" name="assignment.id" from="${school.Assignment.list()}" optionKey="id" required=""
+    <g:select id="assignment" name="assignment.id" from="${Assignment.list()}" optionKey="id" required=""
               value="${gradesInstance?.assignment?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: gradesInstance, field: 'grade', 'error')} ">
     <label for="grade">
-        <g:message code="grades.grade.label" default="Grade"/>
+        <g:message code="grades.label" default="Grade"/>
 
     </label>
     <g:textField name="grade" value="${gradesInstance?.grade}"/>
@@ -21,7 +21,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: gradesInstance, field: 'students', 'error')} required">
     <label for="students">
-        <g:message code="grades.students.label" default="Students"/>
+        <g:message code="students.label" default="Students"/>
         <span class="required-indicator">*</span>
     </label>
     <g:select id="students" name="students.id" from="${students}" optionKey="id" required=""
