@@ -1,7 +1,5 @@
 <%@ page import="school.Section; school.Assignment" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: assignmentInstance, field: 'dateDue', 'error')} required">
 	<label for="dateDue">
 		<g:message code="assignment.dateDue.label" default="Date Due" />

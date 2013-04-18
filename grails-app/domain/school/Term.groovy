@@ -5,4 +5,8 @@ class Term {
 
     static constraints = {
     }
+
+    String toString() {
+        return name
+    }
 }

@@ -63,7 +63,6 @@
                     </sec:ifLoggedIn>
 
 
-
                 <!--    <li<%=request.forwardURI == "${createLink(uri: '/')}" ? ' class="active"' : ''%>><a
                             href="${createLink(uri: '/')}">Home</a></li>
                     <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName }}">

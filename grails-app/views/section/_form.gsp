@@ -16,7 +16,7 @@
     <g:field name="sectionNumber" type="number" value="${sectionInstance.sectionNumber}" required=""/>
 </div>
 
-<div class="fieldcontain ${hassErrors(bean: sectionInstance, field: 'term', 'error')}">
+<div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'term', 'error')}">
     <label for="term">
         <g:message code="term.label" default="Term"/>
 

@@ -43,7 +43,7 @@
         <dl>
 
             <g:if test="${userInstance?.name}">
-                <dt><g:message code="user.name.label" default="Name"/></dt>
+                <dt><g:message code="name.label" default="Name"/></dt>
 
                 <dd><g:fieldValue bean="${userInstance}" field="name"/></dd>
 
