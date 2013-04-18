@@ -13,8 +13,8 @@
 
     <g:each in="${grades}">
             <tr>
-                <td>${it.containsKey('name')}</td>
-                <td>${it.containsKey('grade')}</td>
+                <td>${it.name}</td>
+                <td>${it.grade}</td>
             </tr>
         </table>
 

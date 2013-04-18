@@ -27,6 +27,7 @@ class GradeViewController {
             map.put("grade", rs.getString('grade'))
             grades.add(map)
         }
+        log.debug(grades)
         [grades: grades]
 
     }

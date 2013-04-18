@@ -14,4 +14,9 @@ class Section {
         assistant nullable: true
         term nullable: true
     }
+
+    String toString() {
+        return course.name
+    }
+
 }

@@ -21,7 +21,7 @@
         <g:message code="term.label" default="Term"/>
 
     </label>
-    <g:select id="term" name="term.id" from="${sessionInstance.term}" optionKey="id" required="" value="${sectionInstance?.term?.id}" class="many-to-one"/>
+    <g:select id="term" name="term.id" from="${terms}" optionKey="id" required="" value="${sectionInstance?.term?.id}" class="many-to-one"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: sectionInstance, field: 'teacher', 'error')} required">

@@ -91,7 +91,13 @@ log4j = {
             'org.hibernate',
             'net.sf.ehcache.hibernate'
 
+    debug  'grails.app'
 
+    //trace  'org.hibernate.type'
+
+    off    'grails.app.services.org.grails.plugin.resource',
+            'grails.app.taglib.org.grails.plugin.resource',
+            'grails.app.resourceMappers.org.grails.plugin.resource'
 }
 
 // Added by the Spring Security Core plugin:
