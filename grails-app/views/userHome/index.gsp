@@ -47,7 +47,7 @@
                 <ul class="nav nav-list">
                 <g:each status="i" in="${sections}" var="se" >
                     <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                        <td>${se.code} ${se.name}</td>
+                        <g:link controller="sectionHome" params="[section: se.id]"><td>${se.code} ${se.name}</td></g:link>
                     </tr>
                 </g:each>
                 </ul>
