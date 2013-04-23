@@ -73,6 +73,21 @@ table th.desc a:after {
     background-position: -312px -96px;
 }
 
+tr.a td {
+    background-color: #F5F5F5;
+    border: 1px solid #E3E3E3;
+}
+
+tr.b td {
+    background-color: #FFFFFF;
+    border: 1px solid #E3E3E3;
+}
+
+td {
+    padding: 0.5em;
+    padding-right: 1.0em;
+}
+
 /* optimized display for small devices */
 
 @media (max-width:480px) {

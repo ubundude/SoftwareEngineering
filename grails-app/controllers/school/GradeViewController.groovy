@@ -8,6 +8,10 @@ import java.sql.Connection
 class GradeViewController {
 
     def index() {
+        redirect action: 'changeTerm'
+    }
+
+    def changeTerm() {
         ResultSet rs
         Connection src
         Statement stmt
@@ -29,6 +33,7 @@ class GradeViewController {
         }
         log.debug(grades)
         [grades: grades]
-
+        redirect action: 'index'
     }
+
 }

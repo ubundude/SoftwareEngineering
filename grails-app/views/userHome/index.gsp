@@ -19,7 +19,7 @@
     <aside id="application-status" class="span3">
         <div class="well sidebar-nav">
             <h5>User</h5>
-            <sec:loggedInUserInfo field="username" />
+            <p>Hello ${user.name}</p>
 
 
         </div>
@@ -39,18 +39,19 @@
 
         <div class="span4">
             <h3>Classes</h3>
-            <g:select name="term" from="${Term.list()}"
-                value="${Term}" />
+                <g:form id="changeTerm" method="POST" action="changeTerm" name="changeTerm">
+                    <g:select id="termId" name="term" from="${Term.list()}" />
+                </g:form>
 
-            <!--
-            <ul class="nav nav-list">
-            <g:each in="sections">
-                 <li><
-            </g:each>
-            </ul>
-
-            -->
-
+            <table>
+                <ul class="nav nav-list">
+                <g:each status="i" in="${sections}" var="se" >
+                    <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
+                        <td>${se.code} ${se.name}</td>
+                    </tr>
+                </g:each>
+                </ul>
+            </table>
 
 
         </div>
@@ -70,6 +71,14 @@
     </section>
 
 </div>
+
+<script type="text/javascript">
+    $(function() {
+        $ ('#termId').change(function() {
+            $(this).parents('form').submit();
+        });
+    });
+</script>
 
 </body>
 </html>

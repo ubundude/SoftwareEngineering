@@ -59,8 +59,12 @@ class SectionController {
                     redirect action: 'list'
                     return
                 }
-                      //TODO add lists
-                [sectionInstance: sectionInstance]
+                List teachers = User.executeQuery("select u from User u, UserRole ur where ur.user.id = u.id and ur.role.authority = 'ROLE_TEACHER'")
+                List students = User.executeQuery("select u from User u, UserRole ur where ur.user.id = u.id and ur.role.authority = 'ROLE_STUDENT'")
+                List ta =  User.executeQuery("select u from User u, UserRole ur where ur.user.id = u.id and ur.role.authority = 'ROLE_TA'")
+                List terms = Term.list()
+                //[sectionInstance: new Section(params), teachers: teachers, students: students, ta: ta, terms: terms]
+                [sectionInstance: sectionInstance, teachers: teachers, students: students, ta: ta, terms: terms]
                 break
             case 'POST':
                 def sectionInstance = Section.get(params.id)
