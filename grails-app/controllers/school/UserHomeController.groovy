@@ -38,6 +38,10 @@ class UserHomeController {
         [sections: sections, user: user]
     }
 
+    def changeTerm() {
+
+    }
+
     def edit() {
         switch (request.method) {
             case 'GET':

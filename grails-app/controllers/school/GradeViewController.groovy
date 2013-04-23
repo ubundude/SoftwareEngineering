@@ -8,10 +8,6 @@ import java.sql.Connection
 class GradeViewController {
 
     def index() {
-        redirect action: 'changeTerm'
-    }
-
-    def changeTerm() {
         ResultSet rs
         Connection src
         Statement stmt
@@ -33,7 +29,9 @@ class GradeViewController {
         }
         log.debug(grades)
         [grades: grades]
-        redirect action: 'index'
     }
 
+    def create() {
+        GString getAllStudents = "select a.name, g.grade from assignment a right join grades g on a.id = g.assignment_id "
+    }
 }
