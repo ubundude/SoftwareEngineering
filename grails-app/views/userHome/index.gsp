@@ -40,7 +40,7 @@
         <div class="span4">
             <h3>Classes</h3>
                 <g:form id="changeTerm" method="POST" action="changeTerm" name="changeTerm">
-                    <g:select id="termId" name="term" from="${Term.list()}" />
+                    <g:select id="termId" name="term" from="${Term.list()}" noSelection="['':'Choose a term']" optionKey="id" optionValue="name" />
                 </g:form>
 
             <table>
