@@ -15,6 +15,8 @@ class UserHomeController {
 
         User user = springSecurityService.currentUser
 
+        // TODO Display news from news table
+
 //        ResultSet rs
 //        Connection src
 //        Statement stmt

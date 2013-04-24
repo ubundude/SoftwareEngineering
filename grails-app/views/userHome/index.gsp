@@ -33,7 +33,7 @@
             you get the bear, and some days the bear gets you. Our neural pathways have become accustomed to
             your sensory input patterns.</p>
             <sec:ifAllGranted roles="ROLE_ADMIN">
-                <g:link controller="UserHome" action="edit">Edit News</g:link>
+                <g:link controller="news" >Edit News</g:link>
             </sec:ifAllGranted>
         </div>
 
@@ -47,7 +47,7 @@
                 <ul class="nav nav-list">
                 <g:each status="i" in="${sections}" var="se" >
                     <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                        <g:link controller="sectionHome" params="[section: se.id]"><td>${se.code} ${se.name}</td></g:link>
+                        <li><a href="${createLink(controller: 'sectionHome', params: se.id)}" ><td>${se.code} ${se.name}</td></a></li>
                     </tr>
                 </g:each>
                 </ul>
