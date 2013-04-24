@@ -7,8 +7,6 @@ import java.sql.Statement
 
 class UserHomeController {
 
-    static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']
-
     def springSecurityService
 
     def index() {
@@ -67,16 +65,5 @@ class UserHomeController {
         };
         log.debug(sections)
         render view:'index', model:[sections: sections, user: user]
-    }
-
-    def edit() {
-        switch (request.method) {
-            case 'GET':
-
-            break
-            case 'POST':
-
-            break
-        }
     }
 }
