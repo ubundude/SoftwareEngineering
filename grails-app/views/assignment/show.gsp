@@ -50,16 +50,6 @@
                 
             </g:if>
             
-            <g:if test="${assignmentInstance?.grades}">
-                <dt><g:message code="assignment.grades.label" default="Grades"/></dt>
-                
-                <g:each in="${assignmentInstance.grades}" var="g">
-                    <dd><g:link controller="grades" action="show"
-                                id="${g.id}">${g?.encodeAsHTML()}</g:link></dd>
-                </g:each>
-                
-            </g:if>
-            
             <g:if test="${assignmentInstance?.name}">
                 <dt><g:message code="assignment.name.label" default="Name"/></dt>
                 

@@ -1,7 +1,5 @@
 package school
 
-
-
 import org.springframework.dao.DataIntegrityViolationException
 
 class AssignmentController {
@@ -69,9 +67,9 @@ class AssignmentController {
                 if (params.version) {
                     def version = params.version.toLong()
                     if (assignmentInstance.version > version) {
-                        assignmentInstance.errors.rejectValue('version', 'default.optimistic.locking.failure',
-                                [message(code: 'assignment.label', default: 'Assignment')] as Object[],
-                                "Another user has updated this Assignment while you were editing")
+                            assignmentInstance.errors.rejectValue('version', 'default.optimistic.locking.failure',
+                                    [message(code: 'assignment.label', default: 'Assignment')] as Object[],
+                                    "Another user has updated this Assignment while you were editing")
                         render view: 'edit', model: [assignmentInstance: assignmentInstance]
                         return
                     }

@@ -5,7 +5,6 @@ class Grades {
 
     static belongsTo = [assignment:Assignment, students:User]
 
-
     static constraints = {
     }
 }

@@ -6,8 +6,6 @@ class Assignment {
 
     static belongsTo = [section: Section]
 
-    static hasMany = [grades: Grades]
-
     static constraints = {
     }
 

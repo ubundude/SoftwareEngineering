@@ -39,15 +39,15 @@
 
         <div class="span4">
             <h3>Classes</h3>
-                <g:form id="changeTerm" method="POST" action="changeTerm" name="changeTerm">
-                    <g:select id="termId" name="term" from="${Term.list()}" noSelection="['':'Choose a term']" optionKey="id" optionValue="name" />
+                <g:form id="changeTerm" method="POST" action="index" name="changeTerm">
+                    <g:select id="termId" name="term" from="${Term.list()}" optionKey="id" optionValue="name"  />
                 </g:form>
 
             <table>
                 <ul class="nav nav-list">
                 <g:each status="i" in="${sections}" var="se" >
                     <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                        <li><a href="${createLink(controller: 'sectionHome', params: se.id)}" ><td>${se.code} ${se.name}</td></a></li>
+                        <td><li><g:link controller="sectionHome" action="index" params="[section: se.id]" >${se.code} ${se.name}</g:link></li></td>
                     </tr>
                 </g:each>
                 </ul>
