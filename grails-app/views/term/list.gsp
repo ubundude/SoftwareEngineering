@@ -1,5 +1,4 @@
-
-<%@ page import="school.Term" %>
+<%@ page import="elearn.Term" %>
 <!doctype html>
 <html>
 <head>
@@ -44,7 +43,6 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                
                 <g:sortableColumn property="name"
                                   title="${message(code: 'term.name.label', default: 'Name')}"/>
                 

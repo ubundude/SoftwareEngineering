@@ -101,7 +101,7 @@ log4j = {
 }
 
 // Added by the Spring Security Core plugin:
-grails.plugins.springsecurity.userLookup.userDomainClassName = 'school.User'
-grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'school.UserRole'
-grails.plugins.springsecurity.authority.className = 'school.Role'
+grails.plugins.springsecurity.userLookup.userDomainClassName = 'elearn.User'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'elearn.UserRole'
+grails.plugins.springsecurity.authority.className = 'elearn.Role'
 

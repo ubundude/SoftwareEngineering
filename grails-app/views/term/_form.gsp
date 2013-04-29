@@ -1,4 +1,4 @@
-<%@ page import="school.Term" %>
+<%@ page import="elearn.Term" %>
 
 
 

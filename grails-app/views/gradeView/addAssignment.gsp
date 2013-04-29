@@ -14,12 +14,12 @@
     </aside>
     <section id="main" class="span9">
         <div class="well-small">
-            <h3>Grades</h3>
+            <h3><g:link action="index" >Grades</g:link></h3>
         </div>
         <div class="row-fluid">
             <div span="4">
                 <fieldset>
-                    <g:form class="form-horizontal" action="addAssignment" >
+                    <g:form class="form-horizontal" action="addHandler" >
                         <fieldset>
                             <g:render template="form"/>
                             <div class="form-actions">

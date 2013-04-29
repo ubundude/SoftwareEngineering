@@ -1,13 +1,11 @@
-<%@ page import="school.Assignment" %>
-
-
+<%@ page import="elearn.Assignment" %>
 
 <div class="fieldcontain ${hasErrors(bean: assignmentInstance, field: 'dateDue', 'error')} required">
 	<label for="dateDue">
 		<g:message code="assignment.dateDue.label" default="Date Due" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:datePicker name="dateDue" precision="day"  value="${assignmentInstance?.dateDue}"  />
+	<g:datePicker name="dateDue" precision="day" value="${assignmentInstance?.dateDue}"  />
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: assignmentInstance, field: 'name', 'error')} ">
@@ -23,6 +21,6 @@
 		<g:message code="section.label" default="Section" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="section" name="section.id" from="${school.Section.list()}" optionKey="id" required="" value="${assignmentInstance?.section?.id}" class="many-to-one"/>
+	<g:select id="section" name="section.id" from="${elearn.Section.list()}" optionKey="id" required="" value="${assignmentInstance?.section?.id}" class="many-to-one"/>
 </div>
 

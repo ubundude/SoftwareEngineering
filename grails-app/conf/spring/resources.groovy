@@ -2,7 +2,7 @@ import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
 // Place your Spring DSL code here
 beans = {
-//    authenticationSuccessHandler(school.MyAuthSuccessHandler) {
+//    authenticationSuccessHandler(elearn.MyAuthSuccessHandler) {
 //        def conf = SpringSecurityUtils.securityConfig
 //        requestCache = ref('requestCache')
 //        defaultTargetUrl = conf.successHandler.defaultTargetUrl
@@ -10,6 +10,6 @@ beans = {
 //        targetUrlParameter = conf.successHandler.targetUrlParameter
 //        useReferer = conf.successHandler.useReferer
 //        redirectStrategy = ref('redirectStrategy')
-//        goToUrl = "userHome/index"
+//        //goToUrl = "userHome/index"
 //    }
 }

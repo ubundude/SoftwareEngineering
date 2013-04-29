@@ -1,4 +1,4 @@
-<%@ page import="school.UserHomeController; school.Term" %>
+<%@ page import="elearn.UserHomeController; elearn.Term" %>
 <%--
   Created by IntelliJ IDEA.
   User: kolby
@@ -40,17 +40,17 @@
         <div class="span4">
             <h3>Classes</h3>
                 <g:form id="changeTerm" method="POST" action="index" name="changeTerm">
-                    <g:select id="termId" name="term" from="${Term.list()}" optionKey="id" optionValue="name"  />
+                    <g:select id="termId" name="term" from="${Term.list()}" optionKey="id" optionValue="name" noSelection="['':'Please select something']" />
                 </g:form>
 
             <table>
-                <ul class="nav nav-list">
+                <div class="nav nav-list">
                 <g:each status="i" in="${sections}" var="se" >
                     <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                        <td><li><g:link controller="sectionHome" action="index" params="[section: se.id]" >${se.code} ${se.name}</g:link></li></td>
+                        <td><g:link controller="sectionHome" action="index" params="[section: se.section_id]" >${se.code} ${se.name}</g:link></td>
                     </tr>
                 </g:each>
-                </ul>
+                </div>
             </table>
 
 

@@ -1,4 +1,4 @@
-<%@ page import="school.News" %>
+<%@ page import="elearn.News" %>
 
 
 

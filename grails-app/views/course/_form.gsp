@@ -1,4 +1,4 @@
-<%@ page import="school.Course" %>
+<%@ page import="elearn.Course" %>
 
 <div class="fieldcontain ${hasErrors(bean: courseInstance, field: 'code', 'error')} ">
     <label for="code">

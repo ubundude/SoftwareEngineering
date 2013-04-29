@@ -17,13 +17,19 @@
 <div class="row-fluid">
     <aside id="application-status" class="span3">
         <div class="well sidebar-nav">
-            <h5>User</h5>
-            <p>Hello ${user.name}</p>
-
-
+            <h5>User Info</h5>
+            <p>This section to be determined soon.</p>
         </div>
     </aside>
-
+    <section id="main" class="span9">
+        <ul class="nav nav-tabs">
+            <li class="active"><g:link controller="sectionHome" params="[section: section]" >Class Home</g:link></li>
+            <li><g:link controller="gradeView" action="index" params="[section: section]" >Grades</g:link></li>
+        </ul>
+        <div class="row-fluid">
+    <div class="span3">
+        <p>This is the section home page. It is the portal to all information about the section</p>
     </div>
+</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 
-<%@ page import="school.Section" %>
+<%@ page import="elearn.Section" %>
 <!doctype html>
 <html>
 <head>

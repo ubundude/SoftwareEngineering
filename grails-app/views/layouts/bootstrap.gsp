@@ -39,7 +39,7 @@
                 <span class="icon-bar"></span>
             </a>
 
-            <a class="brand" href="${createLink(uri: '/')}">eLearn+</a>
+            <a class="brand" href="${createLink(uri: '/userHome')}">eLearn+</a>
 
             <div class="nav-collapse">
                 <ul class="nav">

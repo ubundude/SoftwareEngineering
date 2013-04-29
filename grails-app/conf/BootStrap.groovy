@@ -1,6 +1,6 @@
-import school.Role
-import school.User
-import school.UserRole
+import elearn.Role
+import elearn.User
+import elearn.UserRole
 
 class BootStrap {
 

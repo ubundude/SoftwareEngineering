@@ -13,9 +13,10 @@
         </div>
     </aside>
     <section id="main" class="span9">
-        <div class="well-small">
-            <h3>Grades</h3>
-        </div>
+        <ul class="nav nav-tabs">
+            <li><g:link controller="sectionHome" params="[section: section]" >Class Home</g:link></li>
+            <li class="active"><g:link controller="gradeView" action="index" params="[section: section]" >Grades</g:link></li>
+        </ul>
         <div class="row-fluid">
 
             <div class="span4">
@@ -27,7 +28,7 @@
 
                         <g:each status="i" in="${grades}" var="gr">
                             <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                                <td>${gr.name}</td>
+                                <td><g:link action="changeGrade" params="[assignment: gr.id, section: section]" >${gr.name}</g:link></td>
                                 <td>${gr.grade}</td>
                             </tr>
 
