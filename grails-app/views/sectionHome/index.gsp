@@ -22,10 +22,7 @@
         </div>
     </aside>
     <section id="main" class="span9">
-        <ul class="nav nav-tabs">
-            <li class="active"><g:link controller="sectionHome" params="[section: section]" >Class Home</g:link></li>
-            <li><g:link controller="gradeView" action="index" params="[section: section]" >Grades</g:link></li>
-        </ul>
+        <g:render template="../menu" />
         <div class="row-fluid">
     <div class="span3">
         <p>This is the section home page. It is the portal to all information about the section</p>

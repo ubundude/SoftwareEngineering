@@ -17,7 +17,16 @@
         <g:render template="../menu" />
         <div class="row-fluid">
             <div class="span3">
-                <p>This is the section home page. It is the portal to all information about the section</p>
+                <g:form action="save" method="post" >
+                    <g:message code="name.label" default="Name" />
+                        <input type="text" name="title" id="title" />
+                    <g:message code="content.summary" default="Summary" />
+                        <input type="text" name="summary" id="summary" />
+                    <g:message code="content.file" default="File" />
+                        <input type="file" name="file" />
+
+                    <input type="submit">
+                </g:form>
             </div>
         </div>
     </section>

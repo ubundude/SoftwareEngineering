@@ -13,10 +13,7 @@
         </div>
     </aside>
     <section id="main" class="span9">
-        <ul class="nav nav-tabs">
-            <li><g:link controller="sectionHome" params="[section: section]" >Class Home</g:link></li>
-            <li class="active"><g:link controller="gradeView" action="index" params="[section: section]" >Grades</g:link></li>
-        </ul>
+        <g:render template="../menu" />
         <div class="row-fluid">
             <div span="4">
                 <g:form action="submitGrades">

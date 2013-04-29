@@ -27,7 +27,7 @@ class ContentController {
                     return
                 }
 
-                flash.message = message(code: 'default.created.message', args: [message(code: 'Content.label', default: 'Content'), contentInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'content.label', default: 'Content'), contentInstance.id])
                 redirect action: 'show', id: contentInstance.id
                 break
         }
@@ -36,7 +36,7 @@ class ContentController {
     def show() {
         def contentInstance = Content.get(params.id)
         if (!contentInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'Content.label', default: 'Content'), params.id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'content.label', default: 'Content'), params.id])
             redirect action: 'list'
             return
         }
@@ -49,7 +49,7 @@ class ContentController {
             case 'GET':
                 def contentInstance = Content.get(params.id)
                 if (!contentInstance) {
-                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'Content.label', default: 'Content'), params.id])
+                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'content.label', default: 'Content'), params.id])
                     redirect action: 'list'
                     return
                 }
@@ -59,7 +59,7 @@ class ContentController {
             case 'POST':
                 def contentInstance = Content.get(params.id)
                 if (!contentInstance) {
-                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'Content.label', default: 'Content'), params.id])
+                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'content.label', default: 'Content'), params.id])
                     redirect action: 'list'
                     return
                 }
@@ -68,7 +68,7 @@ class ContentController {
                     def version = params.version.toLong()
                     if (contentInstance.version > version) {
                         contentInstance.errors.rejectValue('version', 'default.optimistic.locking.failure',
-                                [message(code: 'Content.label', default: 'Content')] as Object[],
+                                [message(code: 'content.label', default: 'Content')] as Object[],
                                 "Another user has updated this Content while you were editing")
                         render view: 'edit', model: [contentInstance: contentInstance]
                         return
@@ -82,7 +82,7 @@ class ContentController {
                     return
                 }
 
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Content.label', default: 'Content'), contentInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'content.label', default: 'Content'), contentInstance.id])
                 redirect action: 'show', id: contentInstance.id
                 break
         }
@@ -91,18 +91,18 @@ class ContentController {
     def delete() {
         def contentInstance = Content.get(params.id)
         if (!contentInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'Content.label', default: 'Content'), params.id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'content.label', default: 'Content'), params.id])
             redirect action: 'list'
             return
         }
 
         try {
             contentInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'Content.label', default: 'Content'), params.id])
+            flash.message = message(code: 'default.deleted.message', args: [message(code: 'content.label', default: 'Content'), params.id])
             redirect action: 'list'
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'Content.label', default: 'Content'), params.id])
+            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'content.label', default: 'Content'), params.id])
             redirect action: 'show', id: params.id
         }
     }
