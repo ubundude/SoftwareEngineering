@@ -14,6 +14,9 @@ class GradeViewController {
     def index() {
         ArrayList<HashMap<String, String>> grades = new ArrayList<HashMap<String, String>>();
 
+        def auth = springSecurityService.authentication.authorities
+        log.debug(auth)
+
         String id = sec.loggedInUserInfo(field:'id')
         int userId = Integer.parseInt(id)
         int sectionId = params.getInt('sectionId')
@@ -21,9 +24,11 @@ class GradeViewController {
         GString getGrades = "select a.id, a.name, g.grade from assignment a left join grades g on a.id = g.assignment_id where a.section_id = ${sectionId} and g.students_id = ${userId}"
         GString getAssignments = "select id, name from assignment where section_id = ${sectionId}"
 
-        if (springSecurityService.ifAnyGranted('ROLE_TEACHER'))
+        if (auth.grep('ROLE_TEACHER')) {
+            log.debug("In the first if")
             rs = stmt.executeQuery(getGrades)
-        else if (sec.ifAnyGranted('ROLE_STUDENT'))
+        }
+        else if (auth.grep('ROLE_TEACHER'))
             rs = stmt.executeQuery(getAssignments)
 
             while (rs.next()) {
