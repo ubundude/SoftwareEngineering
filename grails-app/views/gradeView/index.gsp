@@ -23,13 +23,13 @@
                             <th>Grade</th>
                         </tr>
 
-                        <g:each status="i" in="${grades}" var="gr">
-                            <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                                <td><g:link action="changeGrade" params="[assignment: gr.id, section: section]" >${gr.name}</g:link></td>
-                                <td>${gr.grade}</td>
-                            </tr>
+                            <g:each status="i" in="${grades}" var="gr">
+                                <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
+                                    <td><g:link action="changeGrade" params="[assignment: gr.id, sectionId: sectionId]" >${gr.name}</g:link></td>
+                                    <td>${gr.grade}</td>
+                                </tr>
+                            </g:each>
 
-                        </g:each>
                     </table>
                 </div>
 

@@ -23,15 +23,22 @@
                            <th>Grade</th>
                        </tr>
                        <g:each var="st" in="${students}" status="i">
+                           <input type="hidden" name="uId" id="uId" value="${st.user}" />
+                           <input type="hidden" name="gId" id="gId" value="${st.gId}" />
                            <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                               <input type="hidden" name="uId" id="uId" value="${st.id}" />
                                <td>${st.name}</td>
                                <td><input type="text" name="grade" id="grade" value=${st.grade} ></td>
                            </tr>
                        </g:each>
                     </table>
+                    <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                <i class="icon-ok icon-white"></i>
+                    <g:message code="default.button.create.label" default="Create"/>
+                    </button>
                 </g:form>
             </div>
+                </div>
         </div>
     </section>
 </div>

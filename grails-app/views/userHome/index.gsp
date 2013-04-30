@@ -42,17 +42,17 @@
                 <g:form id="changeTerm" method="POST" action="index" name="changeTerm">
                     <g:select id="termId" name="term" from="${Term.list()}" optionKey="id" optionValue="name" noSelection="['':'Please select something']" />
                 </g:form>
-
+            <div class="nav nav-list">
             <table>
-                <div class="nav nav-list">
+
                 <g:each status="i" in="${sections}" var="se" >
                     <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                        <td><g:link controller="sectionHome" action="index" params="[section: se.section_id]" >${se.code} ${se.name}</g:link></td>
+                        <td><g:link controller="sectionHome" action="index" params="[sectionId: se.section_id]" >${se.code} ${se.name}</g:link></td>
                     </tr>
                 </g:each>
-                </div>
-            </table>
 
+            </table>
+        </div>
 
         </div>
 

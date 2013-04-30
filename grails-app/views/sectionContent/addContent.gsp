@@ -17,13 +17,23 @@
         <g:render template="../menu" />
         <div class="row-fluid">
             <div class="span3">
-                <g:form action="save" method="post" >
-                    <g:message code="name.label" default="Name" />
+                <g:form action="upload" enctype="multipart/form-data" method="post" >
+                    <input type="hidden" name="sectionId" id="sectionId" value="${sectionId}" />
+                    <label for="title">
+                        <g:message code="name.label" default="Name" />
+                        <span class="required-indicator">*</span>
+                    </label>
                         <input type="text" name="title" id="title" />
-                    <g:message code="content.summary" default="Summary" />
+                    <label for="summary">
+                        <g:message code="content.summary" default="Summary" />
+
+                    </label>
                         <input type="text" name="summary" id="summary" />
-                    <g:message code="content.file" default="File" />
-                        <input type="file" name="file" />
+                    <label for="uploadedFile">
+                        <g:message code="content.file" default="File" />
+                        <span class="required-indicator">*</span>
+                    </label>
+                        <input type="file" name="uploadedFile" id="uploadedFile "/>
 
                     <input type="submit">
                 </g:form>

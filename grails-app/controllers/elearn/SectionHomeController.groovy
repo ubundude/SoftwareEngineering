@@ -5,10 +5,10 @@ class SectionHomeController {
     def springSecurityService
 
     def index() {
-        int section = params.getInt('section')
-        log.debug("section home: " + section)
+        int sectionId = params.getInt('sectionId')
+        log.debug("section home: " + sectionId)
         User user = springSecurityService.currentUser
 
-        [user: user, section: section]
+        [user: user, sectionId: sectionId]
     }
 }

@@ -17,7 +17,21 @@
         <g:render template="../menu" />
         <div class="row-fluid">
             <div class="span3">
-                <p>This is the section home page. It is the portal to all information about the section</p>
+                <sec:ifAnyGranted roles="ROLE_TEACHER,ROLE_TA" >
+                    <g:link action="addContent" params="[sectionId: sectionId]">Add content</g:link>
+                </sec:ifAnyGranted>
+                <table>
+                    <th>Item Name</th>
+                    <th>Description</th>
+                    <th>Link</th>
+                    <g:each status="i" in="${contents}" var="c">
+                        <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
+                            <td>${c.title}</td>
+                            <td>${c.summary}</td>
+                            <td><g:link action="download" params="[link: c.link]" >Download</g:link></td>
+                        </tr>
+                    </g:each>
+                </table>
             </div>
         </div>
     </section>
