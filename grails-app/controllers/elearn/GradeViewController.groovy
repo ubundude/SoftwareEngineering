@@ -19,9 +19,12 @@ class GradeViewController {
         int sectionId = params.getInt('sectionId')
 
         GString getGrades = "select a.id, a.name, g.grade from assignment a left join grades g on a.id = g.assignment_id where a.section_id = ${sectionId} and g.students_id = ${userId}"
-//        GString getAssignments = "select id, name from assignment where section_id = ${sectionId}"
+        GString getAssignments = "select id, name from assignment where section_id = ${sectionId}"
 
+        if (springSecurityService.ifAnyGranted('ROLE_TEACHER'))
             rs = stmt.executeQuery(getGrades)
+        else if (sec.ifAnyGranted('ROLE_STUDENT'))
+            rs = stmt.executeQuery(getAssignments)
 
             while (rs.next()) {
                 HashMap<String, String> map = new HashMap<String, String>();
@@ -89,7 +92,7 @@ class GradeViewController {
 
         Iterator gIt = gId.iterator()
         Iterator grIt = grades.iterator()
-        Iterator uIt = grades.iterator()
+        Iterator uIt = users.iterator()
 
         while (gIt.hasNext()) {
             stmt.addBatch("UPDATE grades SET grade=${grIt.next()}, students_id=${uIt.next()} WHERE id=${gIt.next()}")
@@ -97,6 +100,6 @@ class GradeViewController {
 
         stmt.executeBatch()
 
-        render action:index(), params: [sectionId: params.getInt('sectionId')]
+        redirect action:index(), params: [sectionId: params.getInt('sectionId')]
     }
 }

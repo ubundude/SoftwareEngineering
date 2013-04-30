@@ -51,8 +51,7 @@
                         <li <g:if test="${request.getRequestURI().startsWith("/section")}">class="active"</g:if>><a href="${createLink(controller:'section')}">Section Manager</a></li>
                     </sec:ifAnyGranted>
                     <sec:ifAnyGranted roles="ROLE_TEACHER, ROLE_TA">
-                        <li <g:if test="${request.getRequestURI().startsWith("/assignment")}">class="active"</g:if>><a href="${createLink(controller:'assignment')}">Assignment Manager</a></li>
-                        <li <g:if test="${request.getRequestURI().startsWith("/grades")}">class="active"</g:if>><a href="${createLink(controller:'grades')}">Grade Manager</a></li>
+                        <li <g:if test="${request.getRequestURI().startsWith("/grades")}">class="active"</g:if>><a href="${createLink(controller:'gradeView')}">Grade Manager</a></li>
                     </sec:ifAnyGranted>
 
                     <sec:ifNotLoggedIn>

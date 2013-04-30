@@ -25,12 +25,19 @@
 
                             <g:each status="i" in="${grades}" var="gr">
                                 <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                                    <td><g:link action="changeGrade" params="[assignment: gr.id, sectionId: sectionId]" >${gr.name}</g:link></td>
+                                    <td>
+                                        <g:link action="changeGrade" params="[assignment: gr.id, sectionId: sectionId]" >
+                                    ${gr.name}
+
+                                </g:link></td>
                                     <td>${gr.grade}</td>
                                 </tr>
                             </g:each>
 
                     </table>
+                <sec:ifAnyGranted roles="ROLE_TEACHER,ROLE_TA">
+                    <g:link action="addAssignment" params="[sectionId: sectionId]" >Add Assignment</g:link>
+                </sec:ifAnyGranted>
                 </div>
 
             </div>

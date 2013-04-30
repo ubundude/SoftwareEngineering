@@ -16,7 +16,7 @@
         <g:render template="../menu" />
         <div class="row-fluid">
             <div span="4">
-                <g:form action="submitGrades">
+                <g:form action="submitGrades" params="[sectionId: sectionId]">
                     <table>
                        <tr>
                            <th>Student Name</th>
@@ -32,7 +32,7 @@
                        </g:each>
                     </table>
                     <div class="form-actions">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary" >
                                 <i class="icon-ok icon-white"></i>
                     <g:message code="default.button.create.label" default="Create"/>
                     </button>

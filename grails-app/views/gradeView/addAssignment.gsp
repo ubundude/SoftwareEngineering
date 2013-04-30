@@ -13,9 +13,7 @@
         </div>
     </aside>
     <section id="main" class="span9">
-        <div class="well-small">
-            <h3><g:link action="index" >Grades</g:link></h3>
-        </div>
+        <g:render template="../menu"/>
         <div class="row-fluid">
             <div span="4">
                 <fieldset>

@@ -105,3 +105,6 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'elearn.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'elearn.UserRole'
 grails.plugins.springsecurity.authority.className = 'elearn.Role'
 
+grails.plugins.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = '/userHome'
+
