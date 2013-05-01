@@ -45,6 +45,7 @@
                 <ul class="nav">
                     <sec:ifAllGranted roles="ROLE_ADMIN">
                         <li <g:if test="${request.getRequestURI().startsWith("/user")}">class="active"</g:if>><a href="${createLink(controller:'user')}">Users</a></li>
+                        <li <g:if test="${request.getRequestURI().startsWith("/term")}">class="active"</g:if>><a href="${createLink(controller:'term')}">Add Terms</a></li>
                         <li <g:if test="${request.getRequestURI().startsWith("/course")}">class="active"</g:if>><a href="${createLink(controller:'course')}">Course Manager</a></li>
                     </sec:ifAllGranted>
                     <sec:ifAnyGranted roles="ROLE_TEACHER, ROLE_ADMIN">

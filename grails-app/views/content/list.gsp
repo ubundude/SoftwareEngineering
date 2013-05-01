@@ -1,10 +1,10 @@
 
-<%@ page import="elearn.Assignment" %>
+<%@ page import="elearn.Content" %>
 <!doctype html>
 <html>
 <head>
     <meta name="layout" content="bootstrap">
-    <g:set var="entityName" value="${message(code: 'assignment.label', default: 'Assignment')}"/>
+    <g:set var="entityName" value="${message(code: 'content.label', default: 'Content')}"/>
     <title><g:message code="default.list.label" args="[entityName]"/></title>
 </head>
 
@@ -45,40 +45,35 @@
             <thead>
             <tr>
                 
-                <th class="header"><g:message code="assignment.assignmentCategories.label"
-                                              default="Assignment Categories"/></th>
+                <g:sortableColumn property="summary"
+                                  title="${message(code: 'content.summary.label', default: 'Summary')}"/>
                 
-                <g:sortableColumn property="dateDue"
-                                  title="${message(code: 'assignment.dateDue.label', default: 'Date Due')}"/>
+                <g:sortableColumn property="contentURI"
+                                  title="${message(code: 'content.contentURI.label', default: 'Content URI')}"/>
                 
-                <g:sortableColumn property="maxPoints"
-                                  title="${message(code: 'assignment.maxPoints.label', default: 'Max Points')}"/>
-                
-                <g:sortableColumn property="name"
-                                  title="${message(code: 'assignment.name.label', default: 'Name')}"/>
-                
-                <th class="header"><g:message code="assignment.section.label"
+                <th class="header"><g:message code="content.section.label"
                                               default="Section"/></th>
+                
+                <g:sortableColumn property="title"
+                                  title="${message(code: 'content.title.label', default: 'Title')}"/>
                 
                 <th></th>
             </tr>
             </thead>
             <tbody>
-            <g:each in="${assignmentInstanceList}" var="assignmentInstance">
+            <g:each in="${contentInstanceList}" var="contentInstance">
                 <tr>
                     
-                    <td>${fieldValue(bean: assignmentInstance, field: "assignmentCategories")}</td>
+                    <td>${fieldValue(bean: contentInstance, field: "summary")}</td>
                     
-                    <td><g:formatDate date="${assignmentInstance.dateDue}"/></td>
+                    <td>${fieldValue(bean: contentInstance, field: "contentURI")}</td>
                     
-                    <td>${fieldValue(bean: assignmentInstance, field: "maxPoints")}</td>
+                    <td>${fieldValue(bean: contentInstance, field: "section")}</td>
                     
-                    <td>${fieldValue(bean: assignmentInstance, field: "name")}</td>
-                    
-                    <td>${fieldValue(bean: assignmentInstance, field: "section")}</td>
+                    <td>${fieldValue(bean: contentInstance, field: "title")}</td>
                     
                     <td class="link">
-                        <g:link action="show" id="${assignmentInstance.id}" class="btn btn-small">Show &raquo;</g:link>
+                        <g:link action="show" id="${contentInstance.id}" class="btn btn-small">Show &raquo;</g:link>
                     </td>
                 </tr>
             </g:each>
@@ -86,7 +81,7 @@
         </table>
 
         <div class="pagination">
-            <bootstrap:paginate total="${assignmentInstanceTotal}"/>
+            <bootstrap:paginate total="${contentInstanceTotal}"/>
         </div>
     </div>
 

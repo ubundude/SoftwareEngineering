@@ -20,6 +20,7 @@
                     <g:form class="form-horizontal" action="addHandler" >
                         <fieldset>
                             <g:render template="form"/>
+                            <input type="hidden" value="${sectionId}" />
                             <div class="form-actions">
                                 <button type="submit" class="btn btn-primary">
                                     <i class="icon-ok icon-white"></i>

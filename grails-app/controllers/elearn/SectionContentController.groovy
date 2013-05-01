@@ -35,13 +35,14 @@ class SectionContentController {
 
     def upload = {
         def sectionId = params.getInt('sectionId')
+
         def title = params.get('title')
         def summary = params.get('summary')
         log.debug(params.uploadedFile)
         if(params.uploadedFile.getOriginalFilename()) {
             if(params.uploadedFile instanceof org.springframework.web.multipart.commons.CommonsMultipartFile) {
                 new FileOutputStream("c:/users/kolby/grailsUploads/${params.uploadedFile.getOriginalFilename()}").leftShift(params.uploadedFile.getInputStream());
-                def output = "c:/users/kolby/grailsUpload/${params.uploadedFile.getOriginalFilename()}"
+                def output = "c:/users/kolby/IdeaProjects/SoftwareEngineering/web-app/grailsUpload/${params.uploadedFile.getOriginalFilename()}"
                 stmt.execute("INSERT INTO content(title, summary, section_id, contenturi) VALUES('${title}','${summary}','${sectionId}','${output}')",  Statement.RETURN_GENERATED_KEYS)
             } else {
                 log.error("wrong attachment type [${params.uploadedFile.getClass()}");
@@ -55,10 +56,10 @@ class SectionContentController {
         log.debug(link)
         def file = new File("${link}")
         response.setHeader("Content-Type", "application/octet-stream;")
-        response.setHeader("Content-Disposition", "attachment;filename=\" onlisp.pdf\"")
+        response.setHeader("Content-Disposition", "attachment;filename=${file.getName()}")
         response.setHeader("Content-Length", "${file.size()}")
 
-        response.outputStream << file.text.bytes
+        response.outputStream << file.newInputStream()
         redirect action: index(), params: params
     }
 }

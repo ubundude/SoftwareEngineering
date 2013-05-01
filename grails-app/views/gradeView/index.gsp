@@ -22,22 +22,30 @@
                             <th>Assignment Name</th>
                             <th>Grade</th>
                         </tr>
-
-                            <g:each status="i" in="${grades}" var="gr">
+                        <sec:ifAnyGranted roles="ROLE_STUDENT" >
+                            <g:each status="i" in="${assignments}" var="gr">
                                 <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                                    <td>
-                                        <g:link action="changeGrade" params="[assignment: gr.id, sectionId: sectionId]" >
-                                    ${gr.name}
-
-                                </g:link></td>
+                                    <td>${gr.name}</td>
                                     <td>${gr.grade}</td>
                                 </tr>
                             </g:each>
-
+                        </sec:ifAnyGranted>
+                        <sec:ifAnyGranted roles="ROLE_TEACHER" >
+                            <g:each status="i" in="${assignments}" var="gr">
+                                <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
+                                    <td>${gr.name}</td>
+                                    <td>
+                                        <g:link action="changeGrade" params="[assignment: gr.id, sectionId: sectionId]" >
+                                        Edit
+                                        </g:link>
+                                    </td>
+                                </tr>
+                            </g:each>
+                        </sec:ifAnyGranted>
                     </table>
-                <sec:ifAnyGranted roles="ROLE_TEACHER,ROLE_TA">
-                    <g:link action="addAssignment" params="[sectionId: sectionId]" >Add Assignment</g:link>
-                </sec:ifAnyGranted>
+                    <sec:ifAnyGranted roles="ROLE_TEACHER,ROLE_TA" >
+                        <g:link action="addAssignment" params="[sectionId: sectionId]">Add an assignment</g:link>
+                    </sec:ifAnyGranted>
                 </div>
 
             </div>

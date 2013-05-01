@@ -12,7 +12,7 @@ class GradeViewController {
     def springSecurityService
 
     def index() {
-        ArrayList<HashMap<String, String>> grades = new ArrayList<HashMap<String, String>>();
+        ArrayList<HashMap<String, String>> assignments = new ArrayList<HashMap<String, String>>();
 
         def auth = springSecurityService.authentication.authorities
         log.debug(auth)
@@ -26,39 +26,49 @@ class GradeViewController {
 
         if (auth.grep('ROLE_TEACHER')) {
             log.debug("In the first if")
-            rs = stmt.executeQuery(getGrades)
-        }
-        else if (auth.grep('ROLE_TEACHER'))
             rs = stmt.executeQuery(getAssignments)
-
+            while(rs.next()) {
+                HashMap<String, String> map = new HashMap<String, String>()
+                map.put("id", rs.getInt('id'))
+                map.put("name", rs.getString('name'))
+                assignments.add(map)
+            }
+        }
+        else if (auth.grep('ROLE_STUDENT')) {
+            log.debug("in the second if")
+            rs = stmt.executeQuery(getGrades)
             while (rs.next()) {
                 HashMap<String, String> map = new HashMap<String, String>();
                 map.put("id", rs.getInt('id'))
                 map.put("name", rs.getString('name'))
                 map.put("grade", rs.getString('grade'))
-                grades.add(map)
+                assignments.add(map)
             }
+        }
 
-        log.debug(grades)
-        [grades: grades, sectionId: sectionId]
+
+        log.debug(assignments)
+        [assignments: assignments, sectionId: sectionId]
     }
 
     def addAssignment() {
-        //src = DriverManager.getConnection("jdbc:postgresql:elearn","kolby","Cheese85")
-        //stmt = src.createStatement()
-        //String addAssign = "insert into assignment(name, section_id) values('${name}', ${sectionId})"
-
-       //stmt.executeQuery()
-
+        def params = getParams()
+        log.debug(params)
+        [params: params]
     }
 
     def addHandler() {
-        String addAssign = "insert into assignment(name, section_id) values('${name}', ${sectionId})"
+        log.debug(params)
+        def name = params.get('name')
+        def sectionId = params.get('sectionId')
+        def assignment = params.get('category')
+        def maxPoint = params.get("maxPoints")
+        String addAssign = "insert into assignment(assignment_categories_id, max_points, name, section_id) values(${assignment}, ${maxPoint}, '${name}', ${sectionId})"
 
         log.debug(addAssign)
         stmt.executeQuery()
 
-        redirect(action: addAssignment())
+        redirect action: addAssignment()
     }
 
     def changeGrade() {

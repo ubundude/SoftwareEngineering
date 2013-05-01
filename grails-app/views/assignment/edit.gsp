@@ -56,7 +56,7 @@
                     id="${assignmentInstance?.id}" >
             <g:hiddenField name="version" value="${assignmentInstance?.version}"/>
             <fieldset>
-                <g:render template="form" />
+                <f:all bean="assignmentInstance"/>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">
                         <i class="icon-ok icon-white"></i>

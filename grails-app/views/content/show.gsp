@@ -1,10 +1,10 @@
 
-<%@ page import="elearn.Assignment" %>
+<%@ page import="elearn.Content" %>
 <!doctype html>
 <html>
 <head>
     <meta name="layout" content="bootstrap">
-    <g:set var="entityName" value="${message(code: 'assignment.label', default: 'Assignment')}"/>
+    <g:set var="entityName" value="${message(code: 'content.label', default: 'Content')}"/>
     <title><g:message code="default.show.label" args="[entityName]"/></title>
 </head>
 
@@ -43,49 +43,41 @@
 
         <dl>
             
-            <g:if test="${assignmentInstance?.assignmentCategories}">
-                <dt><g:message code="assignment.assignmentCategories.label" default="Assignment Categories"/></dt>
+            <g:if test="${contentInstance?.summary}">
+                <dt><g:message code="content.summary.label" default="Summary"/></dt>
                 
-                <dd><g:link controller="assignmentCategories" action="show"
-                            id="${assignmentInstance?.assignmentCategories?.id}">${assignmentInstance?.assignmentCategories?.encodeAsHTML()}</g:link></dd>
-                
-            </g:if>
-            
-            <g:if test="${assignmentInstance?.dateDue}">
-                <dt><g:message code="assignment.dateDue.label" default="Date Due"/></dt>
-                
-                <dd><g:formatDate date="${assignmentInstance?.dateDue}"/></dd>
+                <dd><g:fieldValue bean="${contentInstance}" field="summary"/></dd>
                 
             </g:if>
             
-            <g:if test="${assignmentInstance?.maxPoints}">
-                <dt><g:message code="assignment.maxPoints.label" default="Max Points"/></dt>
+            <g:if test="${contentInstance?.contentURI}">
+                <dt><g:message code="content.contentURI.label" default="Content URI"/></dt>
                 
-                <dd><g:fieldValue bean="${assignmentInstance}" field="maxPoints"/></dd>
-                
-            </g:if>
-            
-            <g:if test="${assignmentInstance?.name}">
-                <dt><g:message code="assignment.name.label" default="Name"/></dt>
-                
-                <dd><g:fieldValue bean="${assignmentInstance}" field="name"/></dd>
+                <dd><g:fieldValue bean="${contentInstance}" field="contentURI"/></dd>
                 
             </g:if>
             
-            <g:if test="${assignmentInstance?.section}">
-                <dt><g:message code="assignment.section.label" default="Section"/></dt>
+            <g:if test="${contentInstance?.section}">
+                <dt><g:message code="content.section.label" default="Section"/></dt>
                 
                 <dd><g:link controller="section" action="show"
-                            id="${assignmentInstance?.section?.id}">${assignmentInstance?.section?.encodeAsHTML()}</g:link></dd>
+                            id="${contentInstance?.section?.id}">${contentInstance?.section?.encodeAsHTML()}</g:link></dd>
+                
+            </g:if>
+            
+            <g:if test="${contentInstance?.title}">
+                <dt><g:message code="content.title.label" default="Title"/></dt>
+                
+                <dd><g:fieldValue bean="${contentInstance}" field="title"/></dd>
                 
             </g:if>
             
         </dl>
 
         <g:form>
-            <g:hiddenField name="id" value="${assignmentInstance?.id}"/>
+            <g:hiddenField name="id" value="${contentInstance?.id}"/>
             <div class="form-actions">
-                <g:link class="btn" action="edit" id="${assignmentInstance?.id}">
+                <g:link class="btn" action="edit" id="${contentInstance?.id}">
                     <i class="icon-pencil"></i>
                     <g:message code="default.button.edit.label" default="Edit"/>
                 </g:link>

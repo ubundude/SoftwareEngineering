@@ -1,9 +1,9 @@
-<%@ page import="elearn.Assignment" %>
+<%@ page import="elearn.Content" %>
 <!doctype html>
 <html>
 <head>
     <meta name="layout" content="bootstrap">
-    <g:set var="entityName" value="${message(code: 'assignment.label', default: 'Assignment')}"/>
+    <g:set var="entityName" value="${message(code: 'content.label', default: 'Content')}"/>
     <title><g:message code="default.create.label" args="[entityName]"/></title>
 </head>
 
@@ -40,10 +40,10 @@
             <bootstrap:alert class="alert-info">${flash.message}</bootstrap:alert>
         </g:if>
 
-        <g:hasErrors bean="${assignmentInstance}">
+        <g:hasErrors bean="${contentInstance}">
             <bootstrap:alert class="alert-error">
                 <ul>
-                    <g:eachError bean="${assignmentInstance}" var="error">
+                    <g:eachError bean="${contentInstance}" var="error">
                         <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
                                 error="${error}"/></li>
                     </g:eachError>
@@ -54,7 +54,7 @@
         <fieldset>
             <g:form class="form-horizontal" action="create" >
             <fieldset>
-                <f:all bean="assignmentInstance"/>
+                <f:all bean="contentInstance"/>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">
                         <i class="icon-ok icon-white"></i>
