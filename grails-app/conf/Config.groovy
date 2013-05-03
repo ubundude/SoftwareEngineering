@@ -91,9 +91,9 @@ log4j = {
             'org.hibernate',
             'net.sf.ehcache.hibernate'
 
-    debug  'grails.app'
+    debug  'grails.app','org.hibernate.SQL'
 
-    //trace  'org.hibernate.type'
+    trace  'org.hibernate.type'
 
     off    'grails.app.services.org.grails.plugin.resource',
             'grails.app.taglib.org.grails.plugin.resource',

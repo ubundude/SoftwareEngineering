@@ -45,7 +45,7 @@
 
                 <g:each status="i" in="${sections}" var="se" >
                     <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
-                        <td><g:link controller="sectionHome" action="index" params="[sectionId: se.section_id]" >${se.code} ${se.name}</g:link></td>
+                        <td><g:link controller="sectionHome" action="index" params="[section: se.section_id]" >${se.code} ${se.name}</g:link></td>
                     </tr>
                 </g:each>
 

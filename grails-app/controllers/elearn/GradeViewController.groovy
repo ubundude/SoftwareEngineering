@@ -22,10 +22,10 @@ class GradeViewController {
 
         String id = sec.loggedInUserInfo(field:'id')
         int userId = Integer.parseInt(id)
-        int sectionId = params.getInt('sectionId')
+        int section = params.getInt('section')
 
-        GString getGrades = "select a.id, a.name, g.grade from assignment a left join grades g on a.id = g.assignment_id where a.section_id = ${sectionId} and g.students_id = ${userId}"
-        GString getAssignments = "select id, name from assignment where section_id = ${sectionId}"
+        GString getGrades = "select a.id, a.name, g.grade from assignment a left join grades g on a.id = g.assignment_id where a.section_id = ${section} and g.students_id = ${userId}"
+        GString getAssignments = "select id, name from assignment where section_id = ${section}"
 
         if (auth.grep('ROLE_TEACHER')) {
             log.debug("In the first if")
@@ -51,23 +51,39 @@ class GradeViewController {
 
 
         log.debug(assignments)
-        [assignments: assignments, sectionId: sectionId]
+        [assignments: assignments, section: section]
     }
 
     def addAssignment() {
-        def sectionId = params.getInt('sectionId')
-        log.debug(sectionId)
-        [sectionId: sectionId]
+        def section = params.getInt('section')
+        [section: section]
     }
 
     def addHandler() {
         log.debug(params)
+        Section section = Section.get(params.section)
+        AssignmentCategories assignmentCategories = AssignmentCategories.get(params.assignmentCategories)
+        params.remove('section')
+        params.remove('assignmentCategories')
         Assignment assign = new Assignment(params)
         log.debug(assign)
-        assign.save()
+
+        assign.assignmentCategories = assignmentCategories
+        assign.section = section
+        if (assign.validate()) {
+            log.debug("saving")
+            assign.save(flush: true)
+
+        } else {
+            if (assign.hasErrors()) {
+                log.debug(assign.errors)
+            }
+            render view:'addAssignment', model:params
+            return
+        }
+//        assign.save()
 //        def name = params.get('name')
-        def section = params.get('section')
-        log.debug(section)
+        //def section = params.get('section')
 //        def assignment = params.get('category')
 //        def maxPoint = params.get("maxPoints")
 //        String addAssign = "insert into assignment(assignment_categories_id, max_points, name, section_id) values(${assignment}, ${maxPoint}, '${name}', ${sectionId})"
@@ -75,7 +91,7 @@ class GradeViewController {
 //        log.debug(addAssign)
 //        stmt.executeQuery(addAssign)
 
-        redirect action: addAssignment(), params: [sectionId: section]
+        redirect action: addAssignment(), params: [section: section.id]
     }
 
     def changeGrade() {

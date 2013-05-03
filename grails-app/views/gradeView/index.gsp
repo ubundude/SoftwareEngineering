@@ -35,7 +35,7 @@
                                 <tr class="${(i % 2) == 0 ? 'a' : 'b'}">
                                     <td>${gr.name}</td>
                                     <td>
-                                        <g:link action="changeGrade" params="[assignment: gr.id, sectionId: sectionId]" >
+                                        <g:link action="changeGrade" params="[assignment: gr.id, section: section]" >
                                         Edit
                                         </g:link>
                                     </td>
@@ -44,7 +44,7 @@
                         </sec:ifAnyGranted>
                     </table>
                     <sec:ifAnyGranted roles="ROLE_TEACHER,ROLE_TA" >
-                        <g:link action="addAssignment" params="[sectionId: sectionId]">Add an assignment</g:link>
+                        <g:link action="addAssignment" params="[section: section]">Add an assignment</g:link>
                     </sec:ifAnyGranted>
                 </div>
 
