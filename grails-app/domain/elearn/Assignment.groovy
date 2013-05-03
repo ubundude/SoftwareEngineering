@@ -8,6 +8,7 @@ class Assignment {
     static belongsTo = [section: Section, assignmentCategories: AssignmentCategories]
 
     static constraints = {
+        dateDue nullable: true
     }
 
     String toString() {

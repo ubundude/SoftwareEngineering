@@ -44,12 +44,15 @@
         <table class="table table-striped">
             <thead>
             <tr>
+
+                <g:sortableColumn property="title"
+                                  title="${message(code: 'news.title.label', default: 'Title')}"/>
                 
                 <g:sortableColumn property="newsBody"
                                   title="${message(code: 'news.newsBody.label', default: 'News Body')}"/>
-                
-                <g:sortableColumn property="title"
-                                  title="${message(code: 'news.title.label', default: 'Title')}"/>
+
+                <g:sortableColumn property="expires"
+                                  title="${message(code: 'news.expires.label', default: 'Expires')}"/>
                 
                 <th></th>
             </tr>
@@ -57,6 +60,8 @@
             <tbody>
             <g:each in="${newsInstanceList}" var="newsInstance">
                 <tr>
+                    
+                    <td><g:formatDate date="${newsInstance.expires}"/></td>
                     
                     <td>${fieldValue(bean: newsInstance, field: "newsBody")}</td>
                     

@@ -5,6 +5,9 @@ class News {
     String newsBody
     Date expires
 
+    static mapping = {
+        newsBody type: 'text'
+    }
     static constraints = {
     }
 }

@@ -1,10 +1,13 @@
 package elearn
 
+import grails.plugins.springsecurity.Secured
+
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.Statement
 
+@Secured(['ROLE_ADMIN','ROLE_TEACHER','ROLE_STUDENT','ROLE_TA'])
 class SectionContentController {
     ResultSet rs
     Connection src = DriverManager.getConnection("jdbc:postgresql:elearn","kolby","Cheese85")
@@ -35,6 +38,7 @@ class SectionContentController {
 
     def upload = {
         def sectionId = params.getInt('sectionId')
+        def output
 
         def title = params.get('title')
         def summary = params.get('summary')
@@ -42,12 +46,15 @@ class SectionContentController {
         if(params.uploadedFile.getOriginalFilename()) {
             if(params.uploadedFile instanceof org.springframework.web.multipart.commons.CommonsMultipartFile) {
                 new FileOutputStream("c:/users/kolby/grailsUploads/${params.uploadedFile.getOriginalFilename()}").leftShift(params.uploadedFile.getInputStream());
-                def output = "c:/users/kolby/IdeaProjects/SoftwareEngineering/web-app/grailsUpload/${params.uploadedFile.getOriginalFilename()}"
-                stmt.execute("INSERT INTO content(title, summary, section_id, contenturi) VALUES('${title}','${summary}','${sectionId}','${output}')",  Statement.RETURN_GENERATED_KEYS)
+                output = "c:/users/kolby/IdeaProjects/SoftwareEngineering/web-app/grailsUpload/${params.uploadedFile.getOriginalFilename()}"
             } else {
                 log.error("wrong attachment type [${params.uploadedFile.getClass()}");
             }
         }
+
+        Content content = new Content([title: title, summary: summary, contentURI: output, section: sectionId]).save()
+        log.debug(content)
+
         redirect action: index(), params: params
     }
 

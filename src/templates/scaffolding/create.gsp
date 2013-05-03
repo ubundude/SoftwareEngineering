@@ -54,7 +54,7 @@
         <fieldset>
             <g:form class="form-horizontal" action="create" <%=multiPart ? ' enctype="multipart/form-data"' : '' %>>
             <fieldset>
-                <f:all bean="${propertyName}"/>
+                <g:render template="${propertyName}"/>
                 <div class="form-actions">
                     <button type="submit" class="btn btn-primary">
                         <i class="icon-ok icon-white"></i>

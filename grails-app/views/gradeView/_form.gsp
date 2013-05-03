@@ -12,7 +12,7 @@
         <g:message code="assignment.maxPoints" default="Maximum Points" />
 
     </label>
-    <g:textField name="maxPoints" />
+    <g:textField name="maxPoints" id="maxPoints" />
 </div>
 
 <div class="fieldcontain ${hasErrors(field: 'section', 'error')} required">
@@ -20,5 +20,5 @@
         <g:message code="categories.label" default="Categories" />
 
     </label>
-    <g:select id="category" name="category" from="${elearn.AssignmentCategories.list()}" optionKey="id" required="" class="many-to-one"/>
+    <g:select id="assignmentCategories" name="assignmentCategories" from="${elearn.AssignmentCategories.list()}" optionKey="id" required="" class="many-to-one"/>
 </div>

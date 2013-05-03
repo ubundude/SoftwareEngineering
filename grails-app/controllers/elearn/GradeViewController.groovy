@@ -1,10 +1,13 @@
 package elearn
 
+import grails.plugins.springsecurity.Secured
+
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.Statement
 import java.sql.Connection
 
+@Secured(['ROLE_ADMIN','ROLE_TEACHER','ROLE_STUDENT','ROLE_TA'])
 class GradeViewController {
     ResultSet rs
     Connection src = DriverManager.getConnection("jdbc:postgresql:elearn","kolby","Cheese85")
@@ -52,23 +55,27 @@ class GradeViewController {
     }
 
     def addAssignment() {
-        def params = getParams()
-        log.debug(params)
-        [params: params]
+        def sectionId = params.getInt('sectionId')
+        log.debug(sectionId)
+        [sectionId: sectionId]
     }
 
     def addHandler() {
         log.debug(params)
-        def name = params.get('name')
-        def sectionId = params.get('sectionId')
-        def assignment = params.get('category')
-        def maxPoint = params.get("maxPoints")
-        String addAssign = "insert into assignment(assignment_categories_id, max_points, name, section_id) values(${assignment}, ${maxPoint}, '${name}', ${sectionId})"
+        Assignment assign = new Assignment(params)
+        log.debug(assign)
+        assign.save()
+//        def name = params.get('name')
+        def section = params.get('section')
+        log.debug(section)
+//        def assignment = params.get('category')
+//        def maxPoint = params.get("maxPoints")
+//        String addAssign = "insert into assignment(assignment_categories_id, max_points, name, section_id) values(${assignment}, ${maxPoint}, '${name}', ${sectionId})"
+        //todo get davids help
+//        log.debug(addAssign)
+//        stmt.executeQuery(addAssign)
 
-        log.debug(addAssign)
-        stmt.executeQuery()
-
-        redirect action: addAssignment()
+        redirect action: addAssignment(), params: [sectionId: section]
     }
 
     def changeGrade() {

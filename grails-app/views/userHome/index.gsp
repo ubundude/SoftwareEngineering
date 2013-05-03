@@ -26,12 +26,10 @@
     </aside>
     <section id="main" class="span9">
         <div class="hero-unit">
-            <h1>Welcome to eLearn+</h1>
-
-            <p>Captain, why are we out here chasing comets? A surprise party? Mr. Worf, I hate surprise parties.
-            I would *never* do that to you. Mr. Crusher, ready a collision course with the Borg ship. Some days
-            you get the bear, and some days the bear gets you. Our neural pathways have become accustomed to
-            your sensory input patterns.</p>
+            <g:each in="news" status="i" var="ne" >
+                %{--<h2>${ne.title}</h2>--}%
+                %{--<p>${ne.body}</p>--}%
+            </g:each>
             <sec:ifAllGranted roles="ROLE_ADMIN">
                 <g:link controller="news" >Edit News</g:link>
             </sec:ifAllGranted>

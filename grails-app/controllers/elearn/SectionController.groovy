@@ -3,7 +3,7 @@ package elearn
 import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
-@Secured("ROLE_ADMIN")
+@Secured(['ROLE_ADMIN', 'ROLE_TEACHER'])
 class SectionController {
 
     static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']

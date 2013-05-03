@@ -1,3 +1,4 @@
+
 <%@ page import="elearn.News" %>
 <!doctype html>
 <html>
@@ -41,6 +42,13 @@
         </g:if>
 
         <dl>
+            
+            <g:if test="${newsInstance?.expires}">
+                <dt><g:message code="news.expires.label" default="Expires"/></dt>
+                
+                <dd><g:formatDate date="${newsInstance?.expires}"/></dd>
+                
+            </g:if>
             
             <g:if test="${newsInstance?.newsBody}">
                 <dt><g:message code="news.newsBody.label" default="News Body"/></dt>
