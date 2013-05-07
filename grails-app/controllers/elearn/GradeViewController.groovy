@@ -94,8 +94,11 @@ class GradeViewController {
         params.remove('assignment_id')
         rs = stmt.executeQuery("select user_id from section_users where section_students_id = ${params.section}")
         while(rs.next()) {
-            grades = new Grades([grade: 0, students_id: rs.getInt('user_id')])
+            // TODO get help here. Doesn't like by column id
+            User user = new User()
+            grades = new Grades([grade: 0])
             grades.assignment = assignment
+            grades.students = user
             if (grades.validate()) {
                 log.debug("saving student")
                 grades.save(fulsh: true)
@@ -121,7 +124,8 @@ class GradeViewController {
         int assignId = params.getInt('assignment')
         log.debug(assignId)
         // FIXME int section = params.sId
-        String getStudents = "select g.id as gId, g.grade as grade, u.name as name, u.id as uId from grades g left join users u ON g.students_id = u.id where g.assignment_id = ${assignId} AND u.id IN (select user_id from section_users where section_students_id  = 30)" // FIXME Add ${section}
+        String getStudents = "select g.id as gId, g.grade as grade, u.name as name, u.id as uId from grades g left join users u " +
+                "ON g.students_id = u.id where g.assignment_id = ${assignId} AND u.id IN (select user_id from section_users where section_students_id  = 30)" // FIXME Add ${section}
 
         rs = stmt.executeQuery(getStudents)
 
