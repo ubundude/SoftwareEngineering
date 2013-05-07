@@ -18,7 +18,7 @@
         <div class="row-fluid">
             <div class="span3">
                 <sec:ifAnyGranted roles="ROLE_TEACHER,ROLE_TA" >
-                    <g:link action="addContent" params="[sectionId: sectionId]">Add content</g:link>
+                    <g:link action="addContent" params="[section: section]">Add content</g:link>
                 </sec:ifAnyGranted>
                 <table>
                     <th>Item Name</th>

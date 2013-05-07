@@ -14,10 +14,10 @@ class SectionContentController {
     Statement stmt = src.createStatement()
 
     def index() {
-        int sectionId = params.getInt('sectionId')
+        int section = params.getInt('section')
         ArrayList<HashMap<String, String>> contents = new ArrayList<HashMap<String, String>>();
 
-        String getContent = "select title, summary, contenturi from content where section_id = ${sectionId}"
+        String getContent = "select title, summary, contenturi from content where section_id = ${section}"
         rs = stmt.executeQuery(getContent)
 
         while(rs.next()) {
@@ -27,17 +27,16 @@ class SectionContentController {
             map.put("link", rs.getString('contenturi'))
             contents.add(map)
         }
-        [sectionId: sectionId, contents: contents]
+        [section: section, contents: contents]
     }
 
     def addContent() {
-        int sectionId = params.getInt('sectionId')
+        int section = params.getInt('section')
 
-        [sectionId: sectionId]
+        [section: section]
     }
 
     def upload = {
-        def sectionId = params.getInt('sectionId')
         def output
 
         def title = params.get('title')
@@ -52,10 +51,21 @@ class SectionContentController {
             }
         }
 
-        Content content = new Content([title: title, summary: summary, contentURI: output, section: sectionId]).save()
-        log.debug(content)
+        Section section = Section.get(params.section)
+        params.remove('section')
+        Content content = new Content([title: title, summary: summary, contentURI: output, section: section])
+//        content.section = section
+        if (content.validate()) {
+            log.debug('saving')
+            content.save(flush: true)
+        } else if (content.hasErrors()) {
+            log.debug(content.errors)
 
-        redirect action: index(), params: params
+            render view:'addContent', model:params
+            return
+        }
+
+        redirect action: index(), params: [params: params, section: section]
     }
 
     def download() {

@@ -5,7 +5,7 @@ class Assignment {
     Date dateDue
     int maxPoints
 
-    static belongsTo = [section: Section, assignmentCategories: AssignmentCategories]
+    static belongsTo = [assignmentCategories: AssignmentCategories]
 
     static constraints = {
         dateDue nullable: true

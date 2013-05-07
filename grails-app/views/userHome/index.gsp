@@ -26,9 +26,9 @@
     </aside>
     <section id="main" class="span9">
         <div class="hero-unit">
-            <g:each in="news" status="i" var="ne" >
-                %{--<h2>${ne.title}</h2>--}%
-                %{--<p>${ne.body}</p>--}%
+            <g:each status="i" in="${news}" var="ne" >
+                <h2>${ne.title}</h2>
+                <p>${ne.body}</p>
             </g:each>
             <sec:ifAllGranted roles="ROLE_ADMIN">
                 <g:link controller="news" >Edit News</g:link>

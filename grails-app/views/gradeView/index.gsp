@@ -44,7 +44,8 @@
                         </sec:ifAnyGranted>
                     </table>
                     <sec:ifAnyGranted roles="ROLE_TEACHER,ROLE_TA" >
-                        <g:link action="addAssignment" params="[section: section]">Add an assignment</g:link>
+                        <g:link action="addAssignment" params="[section: section]">Add an assignment</g:link><br />
+                        <g:link action="manageCategories" params="[section: section]">Manage Categories</g:link>
                     </sec:ifAnyGranted>
                 </div>
 

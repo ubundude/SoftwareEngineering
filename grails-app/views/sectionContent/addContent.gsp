@@ -18,7 +18,7 @@
         <div class="row-fluid">
             <div class="span3">
                 <g:form action="upload" enctype="multipart/form-data" method="post" >
-                    <input type="hidden" name="sectionId" id="sectionId" value="${sectionId}" />
+                    <input type="hidden" name="section" id="section" value="${section}" />
                     <label for="title">
                         <g:message code="name.label" default="Name" />
                         <span class="required-indicator">*</span>
