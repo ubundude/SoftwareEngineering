@@ -1,7 +1,15 @@
 package elearn
 
+import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * Class to control the views for managing content. Not publicly accessible.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
+@Secured(['ROLE_TEACHER', 'ROLE_TA'])
 class ContentController {
 
     static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']

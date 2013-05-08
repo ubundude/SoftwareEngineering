@@ -1,5 +1,11 @@
 package elearn
 
+/**
+ * Class defining the domain object for the Roles a User can have
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 class Role {
 
     String authority

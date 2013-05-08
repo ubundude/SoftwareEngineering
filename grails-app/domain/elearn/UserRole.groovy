@@ -2,6 +2,13 @@ package elearn
 
 import org.apache.commons.lang.builder.HashCodeBuilder
 
+/**
+ * Class defining the domain object for linking a User to a Role.
+ * Created by the Spring Security Core plugin.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 class UserRole implements Serializable {
 
     User user

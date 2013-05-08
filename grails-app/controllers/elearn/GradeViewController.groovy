@@ -7,6 +7,13 @@ import java.sql.ResultSet
 import java.sql.Statement
 import java.sql.Connection
 
+/**
+ * Class to control the views for Teachers to create assignments and manage Student
+ * grades for a section. Also lets Students view their grades for that section.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 @Secured(['ROLE_TEACHER','ROLE_STUDENT','ROLE_TA'])
 class GradeViewController {
     ResultSet rs

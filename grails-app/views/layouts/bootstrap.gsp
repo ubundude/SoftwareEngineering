@@ -51,9 +51,6 @@
                     <sec:ifAnyGranted roles="ROLE_TEACHER, ROLE_ADMIN">
                         <li <g:if test="${request.getRequestURI().startsWith("/section")}">class="active"</g:if>><a href="${createLink(controller:'section')}">Section Manager</a></li>
                     </sec:ifAnyGranted>
-                    <sec:ifAnyGranted roles="ROLE_TEACHER, ROLE_TA">
-                        <li <g:if test="${request.getRequestURI().startsWith("/grades")}">class="active"</g:if>><a href="${createLink(controller:'gradeView')}">Grade Manager</a></li>
-                    </sec:ifAnyGranted>
 
                     <sec:ifNotLoggedIn>
                        <li><g:link controller="login" action="auth">Login</g:link></li>

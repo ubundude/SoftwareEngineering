@@ -2,6 +2,12 @@ package elearn
 
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * Class to control the views for the AssignmentCategories object
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 class AssignmentCategoriesController {
 
     static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']
@@ -27,7 +33,7 @@ class AssignmentCategoriesController {
                     return
                 }
 
-                flash.message = message(code: 'default.created.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), assignmentCategoriesInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), assignmentCategoriesInstance.id])
                 redirect action: 'show', id: assignmentCategoriesInstance.id
                 break
         }
@@ -36,7 +42,7 @@ class AssignmentCategoriesController {
     def show() {
         def assignmentCategoriesInstance = AssignmentCategories.get(params.id)
         if (!assignmentCategoriesInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), params.id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), params.id])
             redirect action: 'list'
             return
         }
@@ -49,7 +55,7 @@ class AssignmentCategoriesController {
             case 'GET':
                 def assignmentCategoriesInstance = AssignmentCategories.get(params.id)
                 if (!assignmentCategoriesInstance) {
-                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), params.id])
+                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), params.id])
                     redirect action: 'list'
                     return
                 }
@@ -59,7 +65,7 @@ class AssignmentCategoriesController {
             case 'POST':
                 def assignmentCategoriesInstance = AssignmentCategories.get(params.id)
                 if (!assignmentCategoriesInstance) {
-                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), params.id])
+                    flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), params.id])
                     redirect action: 'list'
                     return
                 }
@@ -68,7 +74,7 @@ class AssignmentCategoriesController {
                     def version = params.version.toLong()
                     if (assignmentCategoriesInstance.version > version) {
                         assignmentCategoriesInstance.errors.rejectValue('version', 'default.optimistic.locking.failure',
-                                [message(code: 'assignmentCategories.label', default: 'AssignmentCategories')] as Object[],
+                                [message(code: 'assignmentCategories.label', default: 'Assignment Categories')] as Object[],
                                 "Another user has updated this AssignmentCategories while you were editing")
                         render view: 'edit', model: [assignmentCategoriesInstance: assignmentCategoriesInstance]
                         return
@@ -82,7 +88,7 @@ class AssignmentCategoriesController {
                     return
                 }
 
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), assignmentCategoriesInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), assignmentCategoriesInstance.id])
                 redirect action: 'show', id: assignmentCategoriesInstance.id
                 break
         }
@@ -91,18 +97,18 @@ class AssignmentCategoriesController {
     def delete() {
         def assignmentCategoriesInstance = AssignmentCategories.get(params.id)
         if (!assignmentCategoriesInstance) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), params.id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), params.id])
             redirect action: 'list'
             return
         }
 
         try {
             assignmentCategoriesInstance.delete(flush: true)
-            flash.message = message(code: 'default.deleted.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), params.id])
+            flash.message = message(code: 'default.deleted.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), params.id])
             redirect action: 'list'
         }
         catch (DataIntegrityViolationException e) {
-            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'assignmentCategories.label', default: 'AssignmentCategories'), params.id])
+            flash.message = message(code: 'default.not.deleted.message', args: [message(code: 'assignmentCategories.label', default: 'Assignment Categories'), params.id])
             redirect action: 'show', id: params.id
         }
     }

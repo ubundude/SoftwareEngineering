@@ -1,10 +1,8 @@
 <%@ page import="elearn.Assignment" %>
 
-
-
 <div class="fieldcontain ${hasErrors(bean: assignmentInstance, field: 'assignmentCategories', 'error')} required">
 	<label for="assignmentCategories">
-		<g:message code="assignment.assignmentCategories.label" default="Assignment Categories" />
+		<g:message code="assignmentCategories.label" default="Assignment Categories" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="assignmentCategories" name="assignmentCategories.id" from="${elearn.AssignmentCategories.list()}" optionKey="id" required="" value="${assignmentInstance?.assignmentCategories?.id}" class="many-to-one"/>
@@ -28,7 +26,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: assignmentInstance, field: 'name', 'error')} ">
 	<label for="name">
-		<g:message code="assignment.name.label" default="Name" />
+		<g:message code="name.label" default="Name" />
 		
 	</label>
 	<g:textField name="name" value="${assignmentInstance?.name}"/>
@@ -36,7 +34,7 @@
 
 <div class="fieldcontain ${hasErrors(bean: assignmentInstance, field: 'section', 'error')} required">
 	<label for="section">
-		<g:message code="assignment.section.label" default="Section" />
+		<g:message code="section.label" default="Section" />
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="section" name="section.id" from="${elearn.Section.list()}" optionKey="id" required="" value="${assignmentInstance?.section?.id}" class="many-to-one"/>

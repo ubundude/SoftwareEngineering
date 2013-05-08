@@ -1,7 +1,15 @@
 package elearn
 
+import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * Class to control the views for News object
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
+@Secured(['ROLE_ADMIN'])
 class NewsController {
 
     static allowedMethods = [create: ['GET', 'POST'], edit: ['GET', 'POST'], delete: 'POST']

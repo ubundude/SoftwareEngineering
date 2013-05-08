@@ -3,6 +3,13 @@ package elearn
 import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * Class to control the views for the Sections. This class and it's views not
+ * publicly accessible.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 @Secured(['ROLE_ADMIN', 'ROLE_TEACHER'])
 class SectionController {
 

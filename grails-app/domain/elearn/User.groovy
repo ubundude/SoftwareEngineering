@@ -2,9 +2,14 @@ package elearn
 
 import grails.plugins.springsecurity.Secured
 
+/**
+ * Class defining the domain object for a User.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 @Secured('ROLE_ADMIN')
 class User {
-
     transient springSecurityService
 
     String name

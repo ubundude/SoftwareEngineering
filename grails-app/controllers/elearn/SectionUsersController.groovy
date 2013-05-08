@@ -1,10 +1,19 @@
 package elearn
 
+import grails.plugins.springsecurity.Secured
+
 import java.sql.Connection
 import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.Statement
 
+/**
+ * Class to control the views for the views displaying the Class List for the section.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
+@Secured(['ROLE_TEACHER', 'ROLE_TA', 'ROLE_STUDENT'])
 class SectionUsersController {
     ResultSet rs
     Connection src = DriverManager.getConnection("jdbc:postgresql:elearn","kolby","Cheese85")

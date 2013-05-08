@@ -12,6 +12,12 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 import javax.servlet.http.HttpServletResponse
 
+/**
+ * Class to control Login to the System. Created by the Spring Security Core plugin
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 class LoginController {
 
     /**

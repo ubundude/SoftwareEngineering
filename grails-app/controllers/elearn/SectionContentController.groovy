@@ -7,6 +7,13 @@ import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.Statement
 
+/**
+ * Class to control the views for Section Content. Custom class to display and
+ * manage content for the current Section.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 @Secured(['ROLE_ADMIN','ROLE_TEACHER','ROLE_STUDENT','ROLE_TA'])
 class SectionContentController {
     ResultSet rs

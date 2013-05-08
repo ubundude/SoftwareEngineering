@@ -2,8 +2,12 @@ package elearn
 
 import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
 
-
-
+/**
+ * Class to control Logout to the System. Created by the Spring Security Core plugin
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 class LogoutController {
 
     /**

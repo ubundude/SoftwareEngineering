@@ -3,6 +3,12 @@ package elearn
 import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
+/**
+ * Class to control the views for managing Users
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 @Secured("ROLE_ADMIN")
 class UserController {
 

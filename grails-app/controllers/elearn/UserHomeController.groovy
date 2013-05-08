@@ -7,6 +7,13 @@ import java.sql.DriverManager
 import java.sql.ResultSet
 import java.sql.Statement
 
+/**
+ * Class to control the views for the Homepage that a user is first taken to
+ * upon login.
+ *
+ * @author Kolby Cansler
+ * @author Simeon Burns
+ */
 @Secured(['ROLE_ADMIN','ROLE_TEACHER','ROLE_STUDENT','ROLE_TA'])
 class UserHomeController {
 
@@ -19,8 +26,6 @@ class UserHomeController {
     def index() {
 
         User user = springSecurityService.currentUser
-
-        // TODO Display news from news table
 
         String uId = sec.loggedInUserInfo(field:"id")
         int userId = Integer.parseInt(uId)
