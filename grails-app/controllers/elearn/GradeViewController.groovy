@@ -1,6 +1,7 @@
 package elearn
 
 import grails.plugins.springsecurity.Secured
+import org.hibernate.Session
 
 import java.sql.DriverManager
 import java.sql.ResultSet
@@ -69,7 +70,7 @@ class GradeViewController {
 
     def addHandler() {
         log.debug("Add handler got params: " + params)
-        def saveId
+        Long saveId
         AssignmentCategories assignmentCategories = AssignmentCategories.get(params.assignmentCategories)
         params.remove('assignmentCategories')
         Assignment assign = new Assignment(params)
@@ -90,19 +91,20 @@ class GradeViewController {
             return
         }
 
+        params.put('assignment_id', saveId)
         log.debug('passing params' + params)
-        redirect action: addStudents(), params: [params: params, assignment_id: saveId]
+        redirect action: addStudents(), params: params
     }
 
     def addStudents() {
-        log.debug(params)
+        log.debug("Add Students got params: " + params)
         Grades grades
-        Assignment assignment = new Assignment(params.assignment_id)
+        Assignment assignment = Assignment.get(params.assignment_id)
         params.remove('assignment_id')
         rs = stmt.executeQuery("select user_id from section_users where section_students_id = ${params.section}")
         while(rs.next()) {
             // TODO get help here. Doesn't like by column id
-            User user = new User()
+            User user = User.get(rs.getInt('user_id'))
             grades = new Grades([grade: 0])
             grades.assignment = assignment
             grades.students = user
