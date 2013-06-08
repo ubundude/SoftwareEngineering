@@ -16,6 +16,7 @@ class SectionHomeController {
     def index() {
         int section = params.getInt('section')
         User user = springSecurityService.currentUser
+        println "Request URI: " + request.getRequestURI()
 
         [user: user, section: section]
     }

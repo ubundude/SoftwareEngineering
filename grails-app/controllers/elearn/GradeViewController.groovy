@@ -32,6 +32,8 @@ class GradeViewController {
         int userId = Integer.parseInt(id)
         int section = params.getInt('section')
 
+        String getCategories = "select id, name from assignment_categories where section_id = ${section}"
+
         String getGrades = "select a.id, a.name, g.grade from assignment a left join grades g on a.id = g.assignment_id" +
                 " where a.assignment_categories_id IN (select id from assignment_categories where section_id = ${section}) and g.students_id = ${userId}"
         String getAssignments = "select id, name from assignment where assignment_categories_id IN (select id from assignment_categories where section_id = ${section})"
